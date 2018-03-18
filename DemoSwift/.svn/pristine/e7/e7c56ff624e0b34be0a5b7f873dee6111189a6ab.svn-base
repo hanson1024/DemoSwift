@@ -1,0 +1,73 @@
+//
+//  HCSettingGrabSuccessViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/16.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCSettingGrabSuccessViewController: HCBaseViewController {
+    
+    private let HCSettingGrabSuccessCellIdentifier = "HCSettingGrabSuccessCell"
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        settingTableView()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - private methods
+    
+    func settingTableView() {
+        
+        tableView?.register(UINib.init(nibName: HCSettingGrabSuccessCellIdentifier, bundle: nil), forCellReuseIdentifier: HCSettingGrabSuccessCellIdentifier)
+        tableView?.contentInset = UIEdgeInsetsMake(kStatusBarHeight, 0, 0, 0)
+        tableView?.backgroundColor = kUIColorCustomBlue()
+        tableView?.bounces = false
+    }
+    
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return kScreenHeight - kStatusBarHeight
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: HCSettingGrabSuccessCellIdentifier, for: indexPath) as! HCSettingGrabSuccessCell
+        
+        return cell
+    }
+    
+    // MARK: - event response
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

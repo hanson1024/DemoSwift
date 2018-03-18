@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="HCTicketDetailPriceCell" rowHeight="52" id="KGk-i7-Jjw" customClass="HCTicketDetailPriceCell" customModule="hcp_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="51.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="二等座" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ7-wb-EBg">
+                        <rect key="frame" x="15" y="17" width="46" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70G-zf-Jyu">
+                        <rect key="frame" x="92" y="17.5" width="26.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.97296637296676636" green="0.31860572099685669" blue="0.31847849488258362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有票" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOV-WZ-Qfk">
+                        <rect key="frame" x="175.5" y="17" width="31" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5y4-En-Mhc">
+                        <rect key="frame" x="245" y="8.5" width="60" height="34"/>
+                        <color key="backgroundColor" red="0.32357621192932129" green="0.58425211906433105" blue="0.9046059250831604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="XFF-RQ-0Yf"/>
+                            <constraint firstAttribute="width" constant="60" id="tdx-3Y-4Mj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="订票"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EZ-1A-C7U">
+                        <rect key="frame" x="245" y="8.5" width="60" height="34"/>
+                        <color key="backgroundColor" red="0.97296637296676636" green="0.31860572099685669" blue="0.31847849488258362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="抢票"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o38-9m-Vhj">
+                        <rect key="frame" x="245" y="8.5" width="60" height="34"/>
+                        <color key="backgroundColor" red="0.32357621190000002" green="0.58425211909999997" blue="0.90460592510000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="预约"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQF-4g-GYf">
+                        <rect key="frame" x="15" y="0.0" width="305" height="0.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="BFx-D9-iM3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9EZ-1A-C7U" firstAttribute="top" secondItem="5y4-En-Mhc" secondAttribute="top" id="0cC-TJ-Qjm"/>
+                    <constraint firstItem="tOV-WZ-Qfk" firstAttribute="centerY" secondItem="70G-zf-Jyu" secondAttribute="centerY" id="2kf-VX-gDK"/>
+                    <constraint firstItem="o38-9m-Vhj" firstAttribute="width" secondItem="5y4-En-Mhc" secondAttribute="width" id="4b9-jT-jog"/>
+                    <constraint firstItem="9EZ-1A-C7U" firstAttribute="height" secondItem="5y4-En-Mhc" secondAttribute="height" id="73A-uF-0Rn"/>
+                    <constraint firstItem="SQF-4g-GYf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7Zw-d2-cjG"/>
+                    <constraint firstItem="o38-9m-Vhj" firstAttribute="leading" secondItem="5y4-En-Mhc" secondAttribute="leading" id="7jQ-LN-h4R"/>
+                    <constraint firstItem="o38-9m-Vhj" firstAttribute="height" secondItem="5y4-En-Mhc" secondAttribute="height" id="7sm-vl-7qM"/>
+                    <constraint firstItem="9EZ-1A-C7U" firstAttribute="width" secondItem="5y4-En-Mhc" secondAttribute="width" id="ArE-IG-nEl"/>
+                    <constraint firstItem="70G-zf-Jyu" firstAttribute="centerY" secondItem="rJ7-wb-EBg" secondAttribute="centerY" id="Bax-sT-CYJ"/>
+                    <constraint firstItem="SQF-4g-GYf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="CDf-gk-uVT"/>
+                    <constraint firstItem="tOV-WZ-Qfk" firstAttribute="leading" secondItem="70G-zf-Jyu" secondAttribute="trailing" constant="57" id="DrK-zB-1r6"/>
+                    <constraint firstAttribute="trailing" secondItem="SQF-4g-GYf" secondAttribute="trailing" id="DtL-EJ-dbt"/>
+                    <constraint firstItem="70G-zf-Jyu" firstAttribute="leading" secondItem="rJ7-wb-EBg" secondAttribute="trailing" constant="31" id="FFx-u8-vpa"/>
+                    <constraint firstItem="9EZ-1A-C7U" firstAttribute="leading" secondItem="5y4-En-Mhc" secondAttribute="leading" id="FZ0-ok-rPN"/>
+                    <constraint firstItem="9EZ-1A-C7U" firstAttribute="width" secondItem="5y4-En-Mhc" secondAttribute="width" id="I1j-iv-wS1"/>
+                    <constraint firstAttribute="trailing" secondItem="5y4-En-Mhc" secondAttribute="trailing" constant="15" id="J2Y-PA-Mql"/>
+                    <constraint firstItem="9EZ-1A-C7U" firstAttribute="height" secondItem="5y4-En-Mhc" secondAttribute="height" id="Xkf-kY-ndy"/>
+                    <constraint firstItem="o38-9m-Vhj" firstAttribute="top" secondItem="5y4-En-Mhc" secondAttribute="top" id="Y9b-HQ-xDu"/>
+                    <constraint firstItem="o38-9m-Vhj" firstAttribute="width" secondItem="9EZ-1A-C7U" secondAttribute="width" id="b9D-so-FTy"/>
+                    <constraint firstItem="o38-9m-Vhj" firstAttribute="height" secondItem="9EZ-1A-C7U" secondAttribute="height" id="bhB-KT-BhA"/>
+                    <constraint firstItem="rJ7-wb-EBg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="j7O-0e-zmF"/>
+                    <constraint firstItem="5y4-En-Mhc" firstAttribute="centerY" secondItem="rJ7-wb-EBg" secondAttribute="centerY" id="qGY-HH-M7c"/>
+                    <constraint firstItem="rJ7-wb-EBg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="uIT-ws-o4k"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bookingTicketButton" destination="o38-9m-Vhj" id="De9-xa-cDq"/>
+                <outlet property="grabTicketButton" destination="9EZ-1A-C7U" id="wFO-9D-Veh"/>
+                <outlet property="orderTicketButton" destination="5y4-En-Mhc" id="qiG-g2-nFc"/>
+                <outlet property="priceLabel" destination="70G-zf-Jyu" id="mJP-yp-Xn6"/>
+                <outlet property="seatClassLabel" destination="rJ7-wb-EBg" id="x1J-ke-0p6"/>
+                <outlet property="ticketCountLabel" destination="tOV-WZ-Qfk" id="aBL-vM-QUp"/>
+            </connections>
+            <point key="canvasLocation" x="17" y="56"/>
+        </tableViewCell>
+    </objects>
+</document>

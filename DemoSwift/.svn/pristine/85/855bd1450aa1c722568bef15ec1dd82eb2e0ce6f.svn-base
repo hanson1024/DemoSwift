@@ -1,0 +1,113 @@
+//
+//  HCMineViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/7.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCGrabViewController: HCBaseViewController {
+    
+    let HCGrabViewControllerCellIdentifier = "HCGrabViewControllerCell"
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        settingNavigationBar()
+        settingTableView()
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - private methods
+    
+    func settingNavigationBar() {
+        
+        navItem.title = "火车抢票"
+        
+        navItem.rightBarButtonItem = UIBarButtonItem(customView: HCCustomButton.createByImage(image: "grab_add", didClickCall: {[weak self] in
+            
+            self?.navigationController?.pushViewController(HCSettingGrabViewController(), animated: true)
+        }))
+    }
+    
+    func settingTableView() {
+        
+        tableView?.register(UINib.init(nibName: HCGrabViewControllerCellIdentifier, bundle: nil), forCellReuseIdentifier: HCGrabViewControllerCellIdentifier)
+        tableView?.showsVerticalScrollIndicator = false
+    }
+    
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        return 140
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: HCGrabViewControllerCellIdentifier, for: indexPath) as! HCGrabViewControllerCell
+        
+        switch indexPath.row {
+            case 0:
+                cell.cellType = .order
+            case 1:
+                cell.cellType = .pay
+            case 2:
+                cell.cellType = .check
+            case 3:
+                cell.cellType = .pay
+            case 4:
+                cell.cellType = .order
+            case 5:
+                cell.cellType = .order
+            default: break
+        }
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        return 15
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        navigationController?.pushViewController(HCTicketDetailViewController(), animated: true)
+    }
+    
+    // MARK: - event response
+    
+    /*
+     
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

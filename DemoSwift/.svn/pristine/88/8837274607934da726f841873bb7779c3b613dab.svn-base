@@ -1,0 +1,1379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		242EA514205AC9A200168632 /* HCTicketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA513205AC9A200168632 /* HCTicketDetailViewController.swift */; };
+		242EA517205ACAAB00168632 /* HCTicketDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA515205ACAAB00168632 /* HCTicketDetailHeaderCell.swift */; };
+		242EA518205ACAAB00168632 /* HCTicketDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242EA516205ACAAB00168632 /* HCTicketDetailHeaderCell.xib */; };
+		242EA51B205ACAD900168632 /* HCTicketDetailDaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA519205ACAD900168632 /* HCTicketDetailDaysCell.swift */; };
+		242EA51C205ACAD900168632 /* HCTicketDetailDaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242EA51A205ACAD900168632 /* HCTicketDetailDaysCell.xib */; };
+		242EA51F205ACB0300168632 /* HCTicketDetailPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA51D205ACB0300168632 /* HCTicketDetailPriceCell.swift */; };
+		242EA520205ACB0300168632 /* HCTicketDetailPriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242EA51E205ACB0300168632 /* HCTicketDetailPriceCell.xib */; };
+		242EA522205AD81B00168632 /* HCSettingGrabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA521205AD81B00168632 /* HCSettingGrabViewController.swift */; };
+		242EA525205AD94D00168632 /* HCSettingGrabStationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA523205AD94D00168632 /* HCSettingGrabStationCell.swift */; };
+		242EA526205AD94D00168632 /* HCSettingGrabStationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242EA524205AD94D00168632 /* HCSettingGrabStationCell.xib */; };
+		242EA529205AD9ED00168632 /* HCSettingGrabDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA527205AD9ED00168632 /* HCSettingGrabDateCell.swift */; };
+		242EA52A205AD9ED00168632 /* HCSettingGrabDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242EA528205AD9ED00168632 /* HCSettingGrabDateCell.xib */; };
+		242EA52D205ADCED00168632 /* HCSettingGrabAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA52B205ADCED00168632 /* HCSettingGrabAddCell.swift */; };
+		242EA52E205ADCED00168632 /* HCSettingGrabAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242EA52C205ADCED00168632 /* HCSettingGrabAddCell.xib */; };
+		242EA531205ADD2600168632 /* HCSettingGrabPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA52F205ADD2600168632 /* HCSettingGrabPhoneCell.swift */; };
+		242EA532205ADD2600168632 /* HCSettingGrabPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242EA530205ADD2600168632 /* HCSettingGrabPhoneCell.xib */; };
+		242EA534205AE56500168632 /* HCSettingGrabSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA533205AE56500168632 /* HCSettingGrabSuccessViewController.swift */; };
+		585307D5A3D214EFD1FD0ED9 /* Pods_hcp_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EB88172D73B37EA2013208 /* Pods_hcp_iosTests.framework */; };
+		8ED037F6F186B05D27F85351 /* Pods_hcp_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54753FA1D9EF4B842B2B77E6 /* Pods_hcp_iosUITests.framework */; };
+		C025F8E8204FE94F00D98EDE /* HCMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F8E7204FE94F00D98EDE /* HCMineViewController.swift */; };
+		C025F8EA204FEA7400D98EDE /* HCBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F8E9204FEA7400D98EDE /* HCBaseNavigationController.swift */; };
+		C025F8F0204FEB2700D98EDE /* HCMineNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F8EF204FEB2700D98EDE /* HCMineNavigationController.swift */; };
+		C025F8F2204FEB3E00D98EDE /* HCHomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F8F1204FEB3E00D98EDE /* HCHomeNavigationController.swift */; };
+		C025F8F5204FEE9600D98EDE /* DefineColorFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F8F4204FEE9600D98EDE /* DefineColorFile.swift */; };
+		C025F8F7204FF13800D98EDE /* DefineSizeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F8F6204FF13800D98EDE /* DefineSizeFile.swift */; };
+		C025F90F2050F9DF00D98EDE /* HCCheckTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F90E2050F9DF00D98EDE /* HCCheckTicketViewController.swift */; };
+		C025F9112050FA0D00D98EDE /* HCCheckResultStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F9102050FA0D00D98EDE /* HCCheckResultStatus.swift */; };
+		C025F9142051064200D98EDE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F9132051064200D98EDE /* String+Extension.swift */; };
+		C025F9162052456800D98EDE /* HCSelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F9152052456800D98EDE /* HCSelectCityViewController.swift */; };
+		C025F91A2052484800D98EDE /* HCSelectCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F9192052484800D98EDE /* HCSelectCityService.swift */; };
+		C025F91D205254BB00D98EDE /* HCTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F91C205254BB00D98EDE /* HCTimeService.swift */; };
+		C025F91F205271FF00D98EDE /* HCCheckTicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F91E205271FF00D98EDE /* HCCheckTicketService.swift */; };
+		C025F921205277C800D98EDE /* HCConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F920205277C800D98EDE /* HCConfirmButton.swift */; };
+		C025F923205282FF00D98EDE /* HCViewCornerSerivice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F922205282FF00D98EDE /* HCViewCornerSerivice.swift */; };
+		C025F92520528FE000D98EDE /* HCDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F92420528FE000D98EDE /* HCDatePickerView.swift */; };
+		C025F9272052971E00D98EDE /* HCProgressHUB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F9262052971E00D98EDE /* HCProgressHUB.swift */; };
+		C025F92D20560B2000D98EDE /* HCNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F92C20560B2000D98EDE /* HCNetworkManager.swift */; };
+		C025F92F20561BAE00D98EDE /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F92E20561BAE00D98EDE /* UIBarButtonItem+Extension.swift */; };
+		C025F93120561C0B00D98EDE /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F93020561C0B00D98EDE /* UIButton+Extension.swift */; };
+		C025F93D2056355B00D98EDE /* HCGrabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F9382056355A00D98EDE /* HCGrabNavigationController.swift */; };
+		C025F93E2056355B00D98EDE /* HCGrabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025F9392056355A00D98EDE /* HCGrabViewController.swift */; };
+		C05A4AB6204FDFE500DC1268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05A4AB5204FDFE500DC1268 /* AppDelegate.swift */; };
+		C05A4ABD204FDFE500DC1268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05A4ABC204FDFE500DC1268 /* Assets.xcassets */; };
+		C05A4AC0204FDFE500DC1268 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05A4ABE204FDFE500DC1268 /* LaunchScreen.storyboard */; };
+		C05A4ACB204FDFE500DC1268 /* hcp_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05A4ACA204FDFE500DC1268 /* hcp_iosTests.swift */; };
+		C05A4AD6204FDFE500DC1268 /* hcp_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05A4AD5204FDFE500DC1268 /* hcp_iosUITests.swift */; };
+		C05A4B02204FE63200DC1268 /* HCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05A4B01204FE63200DC1268 /* HCBaseViewController.swift */; };
+		C05A4B04204FE65900DC1268 /* HCMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05A4B03204FE65900DC1268 /* HCMainTabBarController.swift */; };
+		C05A4B06204FE67F00DC1268 /* HCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05A4B05204FE67F00DC1268 /* HCHomeViewController.swift */; };
+		C075C6C3205908E0009905C4 /* HCDateSelectTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6C2205908E0009905C4 /* HCDateSelectTipView.swift */; };
+		C075C6C52059099D009905C4 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6C42059099D009905C4 /* UILabel+Extension.swift */; };
+		C075C6C720590E27009905C4 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6C620590E27009905C4 /* UIAlertController+Extension.swift */; };
+		C075C6C9205923B6009905C4 /* HCCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6C8205923B6009905C4 /* HCCustomButton.swift */; };
+		C075C6CC205926EE009905C4 /* HCMineHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6CA205926EE009905C4 /* HCMineHeaderViewCell.swift */; };
+		C075C6CD205926EE009905C4 /* HCMineHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C075C6CB205926EE009905C4 /* HCMineHeaderViewCell.xib */; };
+		C075C6D2205928A6009905C4 /* HCMineInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6D0205928A6009905C4 /* HCMineInformationCell.swift */; };
+		C075C6D3205928A6009905C4 /* HCMineInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C075C6D1205928A6009905C4 /* HCMineInformationCell.xib */; };
+		C075C6D620592B17009905C4 /* HCMineAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6D420592B17009905C4 /* HCMineAccountCell.swift */; };
+		C075C6D720592B17009905C4 /* HCMineAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C075C6D520592B17009905C4 /* HCMineAccountCell.xib */; };
+		C075C6DA20592CAB009905C4 /* HCMineOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6D820592CAB009905C4 /* HCMineOrderCell.swift */; };
+		C075C6DB20592CAB009905C4 /* HCMineOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C075C6D920592CAB009905C4 /* HCMineOrderCell.xib */; };
+		C075C6DE20593432009905C4 /* HCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6DC20593432009905C4 /* HCLoginViewController.swift */; };
+		C075C6E1205937A7009905C4 /* HCLoginWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6E0205937A7009905C4 /* HCLoginWriteView.swift */; };
+		C075C6E3205A033B009905C4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6E2205A033B009905C4 /* UIView+Extension.swift */; };
+		C075C6E5205A10DF009905C4 /* Stations.json in Resources */ = {isa = PBXBuildFile; fileRef = C075C6E4205A10DE009905C4 /* Stations.json */; };
+		C075C6E8205A4DD9009905C4 /* HCGrabViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6E6205A4DD9009905C4 /* HCGrabViewControllerCell.swift */; };
+		C075C6E9205A4DD9009905C4 /* HCGrabViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C075C6E7205A4DD9009905C4 /* HCGrabViewControllerCell.xib */; };
+		C075C6EB205A62F8009905C4 /* CheckStaion.json in Resources */ = {isa = PBXBuildFile; fileRef = C075C6EA205A62F8009905C4 /* CheckStaion.json */; };
+		C075C6EE205A6777009905C4 /* HCCheckTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6EC205A6777009905C4 /* HCCheckTicketCell.swift */; };
+		C075C6EF205A6777009905C4 /* HCCheckTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C075C6ED205A6777009905C4 /* HCCheckTicketCell.xib */; };
+		C075C6F1205A6C3D009905C4 /* HCCheckTicketOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6F0205A6C3D009905C4 /* HCCheckTicketOperationView.swift */; };
+		C075C6F3205B616A009905C4 /* HCTicketOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075C6F2205B616A009905C4 /* HCTicketOrderViewController.swift */; };
+		C0D0F4032056602A00BBBAFD /* HCHomeLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F4012056602A00BBBAFD /* HCHomeLocationCell.swift */; };
+		C0D0F4042056602A00BBBAFD /* HCHomeLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D0F4022056602A00BBBAFD /* HCHomeLocationCell.xib */; };
+		C0D0F4082056604200BBBAFD /* HCHomeDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D0F4062056604200BBBAFD /* HCHomeDateCell.xib */; };
+		C0D0F40A2056605400BBBAFD /* HCHomeComfirCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F4092056605400BBBAFD /* HCHomeComfirCell.swift */; };
+		C0D0F44B20578C9700BBBAFD /* HCStationSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F44A20578C9700BBBAFD /* HCStationSelectView.swift */; };
+		C0D0F44D2057A27A00BBBAFD /* HCHomeSelectCityStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F44C2057A27A00BBBAFD /* HCHomeSelectCityStatusModel.swift */; };
+		C0D0F44F2057BD6600BBBAFD /* HCHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F44E2057BD6600BBBAFD /* HCHomeModel.swift */; };
+		C0D0F4512057BDF100BBBAFD /* HCHomeTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F4502057BDF100BBBAFD /* HCHomeTimeModel.swift */; };
+		C0D0F4532057C84700BBBAFD /* HCHomeModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F4522057C84700BBBAFD /* HCHomeModelService.swift */; };
+		C0D0F4552057C90B00BBBAFD /* DefineSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F4542057C90B00BBBAFD /* DefineSystem.swift */; };
+		C0D0F4572057D1AB00BBBAFD /* HCDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F4562057D1AB00BBBAFD /* HCDateViewController.swift */; };
+		C0D0F4592057D6D700BBBAFD /* HCHomeDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F4582057D6D700BBBAFD /* HCHomeDateCell.swift */; };
+		C0D0F45B2057D97800BBBAFD /* HCDateViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F45A2057D97800BBBAFD /* HCDateViewControllerCell.swift */; };
+		C0D0F45D2058B4FA00BBBAFD /* HCDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F45C2058B4FA00BBBAFD /* HCDateModel.swift */; };
+		C0D0F45F2058F7D600BBBAFD /* HCDateModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0F45E2058F7D600BBBAFD /* HCDateModelService.swift */; };
+		F9489EE8CCA6AE3E5A6B14AA /* Pods_hcp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD51CD1BAFE8F159C7E9415 /* Pods_hcp_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C05A4AC7204FDFE500DC1268 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C05A4AAA204FDFE500DC1268 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C05A4AB1204FDFE500DC1268;
+			remoteInfo = hcp_ios;
+		};
+		C05A4AD2204FDFE500DC1268 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C05A4AAA204FDFE500DC1268 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C05A4AB1204FDFE500DC1268;
+			remoteInfo = hcp_ios;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10495FBA7EE1BFE40C020F3F /* Pods-hcp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hcp_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hcp_iosTests/Pods-hcp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1840D8D4A298A356538EBD54 /* Pods-hcp_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hcp_iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-hcp_iosUITests/Pods-hcp_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		242EA513205AC9A200168632 /* HCTicketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTicketDetailViewController.swift; sourceTree = "<group>"; };
+		242EA515205ACAAB00168632 /* HCTicketDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTicketDetailHeaderCell.swift; sourceTree = "<group>"; };
+		242EA516205ACAAB00168632 /* HCTicketDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCTicketDetailHeaderCell.xib; sourceTree = "<group>"; };
+		242EA519205ACAD900168632 /* HCTicketDetailDaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTicketDetailDaysCell.swift; sourceTree = "<group>"; };
+		242EA51A205ACAD900168632 /* HCTicketDetailDaysCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCTicketDetailDaysCell.xib; sourceTree = "<group>"; };
+		242EA51D205ACB0300168632 /* HCTicketDetailPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTicketDetailPriceCell.swift; sourceTree = "<group>"; };
+		242EA51E205ACB0300168632 /* HCTicketDetailPriceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCTicketDetailPriceCell.xib; sourceTree = "<group>"; };
+		242EA521205AD81B00168632 /* HCSettingGrabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCSettingGrabViewController.swift; sourceTree = "<group>"; };
+		242EA523205AD94D00168632 /* HCSettingGrabStationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCSettingGrabStationCell.swift; sourceTree = "<group>"; };
+		242EA524205AD94D00168632 /* HCSettingGrabStationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCSettingGrabStationCell.xib; sourceTree = "<group>"; };
+		242EA527205AD9ED00168632 /* HCSettingGrabDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCSettingGrabDateCell.swift; sourceTree = "<group>"; };
+		242EA528205AD9ED00168632 /* HCSettingGrabDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCSettingGrabDateCell.xib; sourceTree = "<group>"; };
+		242EA52B205ADCED00168632 /* HCSettingGrabAddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCSettingGrabAddCell.swift; sourceTree = "<group>"; };
+		242EA52C205ADCED00168632 /* HCSettingGrabAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCSettingGrabAddCell.xib; sourceTree = "<group>"; };
+		242EA52F205ADD2600168632 /* HCSettingGrabPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCSettingGrabPhoneCell.swift; sourceTree = "<group>"; };
+		242EA530205ADD2600168632 /* HCSettingGrabPhoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCSettingGrabPhoneCell.xib; sourceTree = "<group>"; };
+		242EA533205AE56500168632 /* HCSettingGrabSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCSettingGrabSuccessViewController.swift; sourceTree = "<group>"; };
+		54753FA1D9EF4B842B2B77E6 /* Pods_hcp_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hcp_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B7818865477EFFFE0EF4B4 /* Pods-hcp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hcp_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hcp_ios/Pods-hcp_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		BAF021E3006853A8DF5D2AA4 /* Pods-hcp_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hcp_iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hcp_iosUITests/Pods-hcp_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C025F8E7204FE94F00D98EDE /* HCMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMineViewController.swift; sourceTree = "<group>"; };
+		C025F8E9204FEA7400D98EDE /* HCBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCBaseNavigationController.swift; sourceTree = "<group>"; };
+		C025F8EF204FEB2700D98EDE /* HCMineNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMineNavigationController.swift; sourceTree = "<group>"; };
+		C025F8F1204FEB3E00D98EDE /* HCHomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCHomeNavigationController.swift; sourceTree = "<group>"; };
+		C025F8F4204FEE9600D98EDE /* DefineColorFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineColorFile.swift; sourceTree = "<group>"; };
+		C025F8F6204FF13800D98EDE /* DefineSizeFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineSizeFile.swift; sourceTree = "<group>"; };
+		C025F90E2050F9DF00D98EDE /* HCCheckTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCCheckTicketViewController.swift; sourceTree = "<group>"; };
+		C025F9102050FA0D00D98EDE /* HCCheckResultStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCCheckResultStatus.swift; sourceTree = "<group>"; };
+		C025F9132051064200D98EDE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C025F9152052456800D98EDE /* HCSelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCSelectCityViewController.swift; sourceTree = "<group>"; };
+		C025F9192052484800D98EDE /* HCSelectCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCSelectCityService.swift; sourceTree = "<group>"; };
+		C025F91C205254BB00D98EDE /* HCTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTimeService.swift; sourceTree = "<group>"; };
+		C025F91E205271FF00D98EDE /* HCCheckTicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCCheckTicketService.swift; sourceTree = "<group>"; };
+		C025F920205277C800D98EDE /* HCConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCConfirmButton.swift; sourceTree = "<group>"; };
+		C025F922205282FF00D98EDE /* HCViewCornerSerivice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCViewCornerSerivice.swift; sourceTree = "<group>"; };
+		C025F92420528FE000D98EDE /* HCDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCDatePickerView.swift; sourceTree = "<group>"; };
+		C025F9262052971E00D98EDE /* HCProgressHUB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCProgressHUB.swift; sourceTree = "<group>"; };
+		C025F92C20560B2000D98EDE /* HCNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCNetworkManager.swift; sourceTree = "<group>"; };
+		C025F92E20561BAE00D98EDE /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		C025F93020561C0B00D98EDE /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		C025F9322056297200D98EDE /* hcp_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hcp_ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		C025F9382056355A00D98EDE /* HCGrabNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGrabNavigationController.swift; sourceTree = "<group>"; };
+		C025F9392056355A00D98EDE /* HCGrabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGrabViewController.swift; sourceTree = "<group>"; };
+		C05A4AB2204FDFE500DC1268 /* hcp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hcp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05A4AB5204FDFE500DC1268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C05A4ABC204FDFE500DC1268 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C05A4ABF204FDFE500DC1268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C05A4AC1204FDFE500DC1268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C05A4AC6204FDFE500DC1268 /* hcp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hcp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05A4ACA204FDFE500DC1268 /* hcp_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hcp_iosTests.swift; sourceTree = "<group>"; };
+		C05A4ACC204FDFE500DC1268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C05A4AD1204FDFE500DC1268 /* hcp_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hcp_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05A4AD5204FDFE500DC1268 /* hcp_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hcp_iosUITests.swift; sourceTree = "<group>"; };
+		C05A4AD7204FDFE500DC1268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C05A4B01204FE63200DC1268 /* HCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCBaseViewController.swift; sourceTree = "<group>"; };
+		C05A4B03204FE65900DC1268 /* HCMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMainTabBarController.swift; sourceTree = "<group>"; };
+		C05A4B05204FE67F00DC1268 /* HCHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCHomeViewController.swift; sourceTree = "<group>"; };
+		C075C6C2205908E0009905C4 /* HCDateSelectTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCDateSelectTipView.swift; sourceTree = "<group>"; };
+		C075C6C42059099D009905C4 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		C075C6C620590E27009905C4 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		C075C6C8205923B6009905C4 /* HCCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCCustomButton.swift; sourceTree = "<group>"; };
+		C075C6CA205926EE009905C4 /* HCMineHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMineHeaderViewCell.swift; sourceTree = "<group>"; };
+		C075C6CB205926EE009905C4 /* HCMineHeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCMineHeaderViewCell.xib; sourceTree = "<group>"; };
+		C075C6D0205928A6009905C4 /* HCMineInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMineInformationCell.swift; sourceTree = "<group>"; };
+		C075C6D1205928A6009905C4 /* HCMineInformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCMineInformationCell.xib; sourceTree = "<group>"; };
+		C075C6D420592B17009905C4 /* HCMineAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMineAccountCell.swift; sourceTree = "<group>"; };
+		C075C6D520592B17009905C4 /* HCMineAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCMineAccountCell.xib; sourceTree = "<group>"; };
+		C075C6D820592CAB009905C4 /* HCMineOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMineOrderCell.swift; sourceTree = "<group>"; };
+		C075C6D920592CAB009905C4 /* HCMineOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCMineOrderCell.xib; sourceTree = "<group>"; };
+		C075C6DC20593432009905C4 /* HCLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCLoginViewController.swift; sourceTree = "<group>"; };
+		C075C6E0205937A7009905C4 /* HCLoginWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCLoginWriteView.swift; sourceTree = "<group>"; };
+		C075C6E2205A033B009905C4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C075C6E4205A10DE009905C4 /* Stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Stations.json; sourceTree = "<group>"; };
+		C075C6E6205A4DD9009905C4 /* HCGrabViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCGrabViewControllerCell.swift; sourceTree = "<group>"; };
+		C075C6E7205A4DD9009905C4 /* HCGrabViewControllerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCGrabViewControllerCell.xib; sourceTree = "<group>"; };
+		C075C6EA205A62F8009905C4 /* CheckStaion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CheckStaion.json; sourceTree = "<group>"; };
+		C075C6EC205A6777009905C4 /* HCCheckTicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCCheckTicketCell.swift; sourceTree = "<group>"; };
+		C075C6ED205A6777009905C4 /* HCCheckTicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCCheckTicketCell.xib; sourceTree = "<group>"; };
+		C075C6F0205A6C3D009905C4 /* HCCheckTicketOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCCheckTicketOperationView.swift; sourceTree = "<group>"; };
+		C075C6F2205B616A009905C4 /* HCTicketOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTicketOrderViewController.swift; sourceTree = "<group>"; };
+		C0D0F4012056602A00BBBAFD /* HCHomeLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCHomeLocationCell.swift; sourceTree = "<group>"; };
+		C0D0F4022056602A00BBBAFD /* HCHomeLocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCHomeLocationCell.xib; sourceTree = "<group>"; };
+		C0D0F4062056604200BBBAFD /* HCHomeDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HCHomeDateCell.xib; sourceTree = "<group>"; };
+		C0D0F4092056605400BBBAFD /* HCHomeComfirCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCHomeComfirCell.swift; sourceTree = "<group>"; };
+		C0D0F44A20578C9700BBBAFD /* HCStationSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCStationSelectView.swift; sourceTree = "<group>"; };
+		C0D0F44C2057A27A00BBBAFD /* HCHomeSelectCityStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCHomeSelectCityStatusModel.swift; sourceTree = "<group>"; };
+		C0D0F44E2057BD6600BBBAFD /* HCHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCHomeModel.swift; sourceTree = "<group>"; };
+		C0D0F4502057BDF100BBBAFD /* HCHomeTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCHomeTimeModel.swift; sourceTree = "<group>"; };
+		C0D0F4522057C84700BBBAFD /* HCHomeModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCHomeModelService.swift; sourceTree = "<group>"; };
+		C0D0F4542057C90B00BBBAFD /* DefineSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineSystem.swift; sourceTree = "<group>"; };
+		C0D0F4562057D1AB00BBBAFD /* HCDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCDateViewController.swift; sourceTree = "<group>"; };
+		C0D0F4582057D6D700BBBAFD /* HCHomeDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCHomeDateCell.swift; sourceTree = "<group>"; };
+		C0D0F45A2057D97800BBBAFD /* HCDateViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCDateViewControllerCell.swift; sourceTree = "<group>"; };
+		C0D0F45C2058B4FA00BBBAFD /* HCDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCDateModel.swift; sourceTree = "<group>"; };
+		C0D0F45E2058F7D600BBBAFD /* HCDateModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCDateModelService.swift; sourceTree = "<group>"; };
+		C9EB88172D73B37EA2013208 /* Pods_hcp_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hcp_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF7B386465A445657337D7B /* Pods-hcp_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hcp_iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-hcp_iosTests/Pods-hcp_iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		E514879B6F6714110E002FFA /* Pods-hcp_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hcp_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-hcp_ios/Pods-hcp_ios.release.xcconfig"; sourceTree = "<group>"; };
+		EFD51CD1BAFE8F159C7E9415 /* Pods_hcp_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hcp_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C05A4AAF204FDFE500DC1268 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9489EE8CCA6AE3E5A6B14AA /* Pods_hcp_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C05A4AC3204FDFE500DC1268 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				585307D5A3D214EFD1FD0ED9 /* Pods_hcp_iosTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C05A4ACE204FDFE500DC1268 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED037F6F186B05D27F85351 /* Pods_hcp_iosUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07F6590D3E21DD04E9C1CA2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFD51CD1BAFE8F159C7E9415 /* Pods_hcp_ios.framework */,
+				C9EB88172D73B37EA2013208 /* Pods_hcp_iosTests.framework */,
+				54753FA1D9EF4B842B2B77E6 /* Pods_hcp_iosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C025F8F3204FEBC100D98EDE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4AB5204FDFE500DC1268 /* AppDelegate.swift */,
+				C025F9322056297200D98EDE /* hcp_ios-Bridging-Header.h */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C025F8F8204FF9A100D98EDE /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				C025F92C20560B2000D98EDE /* HCNetworkManager.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		C025F9122051058A00D98EDE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C025F9132051064200D98EDE /* String+Extension.swift */,
+				C025F92E20561BAE00D98EDE /* UIBarButtonItem+Extension.swift */,
+				C025F93020561C0B00D98EDE /* UIButton+Extension.swift */,
+				C075C6C42059099D009905C4 /* UILabel+Extension.swift */,
+				C075C6C620590E27009905C4 /* UIAlertController+Extension.swift */,
+				C075C6E2205A033B009905C4 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C025F91B205254A900D98EDE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C025F91C205254BB00D98EDE /* HCTimeService.swift */,
+				C025F922205282FF00D98EDE /* HCViewCornerSerivice.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C025F9362056355A00D98EDE /* Grab */ = {
+			isa = PBXGroup;
+			children = (
+				C025F9372056355A00D98EDE /* Controller */,
+				C025F93A2056355A00D98EDE /* Model */,
+				C025F93B2056355A00D98EDE /* Service */,
+				C025F93C2056355A00D98EDE /* View */,
+			);
+			path = Grab;
+			sourceTree = "<group>";
+		};
+		C025F9372056355A00D98EDE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C025F9382056355A00D98EDE /* HCGrabNavigationController.swift */,
+				C025F9392056355A00D98EDE /* HCGrabViewController.swift */,
+				242EA521205AD81B00168632 /* HCSettingGrabViewController.swift */,
+				242EA533205AE56500168632 /* HCSettingGrabSuccessViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C025F93A2056355A00D98EDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C025F93B2056355A00D98EDE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C025F93C2056355A00D98EDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C075C6E6205A4DD9009905C4 /* HCGrabViewControllerCell.swift */,
+				C075C6E7205A4DD9009905C4 /* HCGrabViewControllerCell.xib */,
+				242EA523205AD94D00168632 /* HCSettingGrabStationCell.swift */,
+				242EA524205AD94D00168632 /* HCSettingGrabStationCell.xib */,
+				242EA527205AD9ED00168632 /* HCSettingGrabDateCell.swift */,
+				242EA528205AD9ED00168632 /* HCSettingGrabDateCell.xib */,
+				242EA52B205ADCED00168632 /* HCSettingGrabAddCell.swift */,
+				242EA52C205ADCED00168632 /* HCSettingGrabAddCell.xib */,
+				242EA52F205ADD2600168632 /* HCSettingGrabPhoneCell.swift */,
+				242EA530205ADD2600168632 /* HCSettingGrabPhoneCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C05A4AA9204FDFE500DC1268 = {
+			isa = PBXGroup;
+			children = (
+				C05A4AB4204FDFE500DC1268 /* hcp_ios */,
+				C05A4AC9204FDFE500DC1268 /* hcp_iosTests */,
+				C05A4AD4204FDFE500DC1268 /* hcp_iosUITests */,
+				C05A4AB3204FDFE500DC1268 /* Products */,
+				FF264ED9B132233D7B9FEFB8 /* Pods */,
+				07F6590D3E21DD04E9C1CA2D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C05A4AB3204FDFE500DC1268 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4AB2204FDFE500DC1268 /* hcp_ios.app */,
+				C05A4AC6204FDFE500DC1268 /* hcp_iosTests.xctest */,
+				C05A4AD1204FDFE500DC1268 /* hcp_iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C05A4AB4204FDFE500DC1268 /* hcp_ios */ = {
+			isa = PBXGroup;
+			children = (
+				C025F8F3204FEBC100D98EDE /* AppDelegate */,
+				C05A4AF5204FE46400DC1268 /* ThirdParty */,
+				C05A4AF6204FE46400DC1268 /* Utils */,
+				C05A4AE4204FE46400DC1268 /* Define */,
+				C05A4AE5204FE46400DC1268 /* Base */,
+				C05A4AE3204FE46400DC1268 /* Manager */,
+				C05A4AEA204FE46400DC1268 /* Modules */,
+				C05A4AF7204FE46400DC1268 /* Resource */,
+				C05A4ABC204FDFE500DC1268 /* Assets.xcassets */,
+				C05A4ABE204FDFE500DC1268 /* LaunchScreen.storyboard */,
+				C05A4AC1204FDFE500DC1268 /* Info.plist */,
+			);
+			path = hcp_ios;
+			sourceTree = "<group>";
+		};
+		C05A4AC9204FDFE500DC1268 /* hcp_iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4ACA204FDFE500DC1268 /* hcp_iosTests.swift */,
+				C05A4ACC204FDFE500DC1268 /* Info.plist */,
+			);
+			path = hcp_iosTests;
+			sourceTree = "<group>";
+		};
+		C05A4AD4204FDFE500DC1268 /* hcp_iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4AD5204FDFE500DC1268 /* hcp_iosUITests.swift */,
+				C05A4AD7204FDFE500DC1268 /* Info.plist */,
+			);
+			path = hcp_iosUITests;
+			sourceTree = "<group>";
+		};
+		C05A4AE3204FE46400DC1268 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C05A4AE4204FE46400DC1268 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				C025F8F4204FEE9600D98EDE /* DefineColorFile.swift */,
+				C025F8F6204FF13800D98EDE /* DefineSizeFile.swift */,
+				C0D0F4542057C90B00BBBAFD /* DefineSystem.swift */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		C05A4AE5204FE46400DC1268 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4AE6204FE46400DC1268 /* Controller */,
+				C05A4AE7204FE46400DC1268 /* Model */,
+				C05A4AE8204FE46400DC1268 /* Service */,
+				C05A4AE9204FE46400DC1268 /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C05A4AE6204FE46400DC1268 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C025F8E9204FEA7400D98EDE /* HCBaseNavigationController.swift */,
+				C05A4B01204FE63200DC1268 /* HCBaseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C05A4AE7204FE46400DC1268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C05A4AE8204FE46400DC1268 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C05A4AE9204FE46400DC1268 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C025F920205277C800D98EDE /* HCConfirmButton.swift */,
+				C075C6C8205923B6009905C4 /* HCCustomButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C05A4AEA204FE46400DC1268 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4AFA204FE50A00DC1268 /* Main */,
+				C05A4AEB204FE46400DC1268 /* Home */,
+				C025F9362056355A00D98EDE /* Grab */,
+				C05A4AF0204FE46400DC1268 /* Mine */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C05A4AEB204FE46400DC1268 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4AEC204FE46400DC1268 /* Controller */,
+				C05A4AED204FE46400DC1268 /* Model */,
+				C05A4AEE204FE46400DC1268 /* Service */,
+				C05A4AEF204FE46400DC1268 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C05A4AEC204FE46400DC1268 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C025F8F1204FEB3E00D98EDE /* HCHomeNavigationController.swift */,
+				C05A4B05204FE67F00DC1268 /* HCHomeViewController.swift */,
+				C025F90E2050F9DF00D98EDE /* HCCheckTicketViewController.swift */,
+				C025F9152052456800D98EDE /* HCSelectCityViewController.swift */,
+				C0D0F4562057D1AB00BBBAFD /* HCDateViewController.swift */,
+				242EA513205AC9A200168632 /* HCTicketDetailViewController.swift */,
+				C075C6F2205B616A009905C4 /* HCTicketOrderViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C05A4AED204FE46400DC1268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C025F9102050FA0D00D98EDE /* HCCheckResultStatus.swift */,
+				C0D0F44C2057A27A00BBBAFD /* HCHomeSelectCityStatusModel.swift */,
+				C0D0F4502057BDF100BBBAFD /* HCHomeTimeModel.swift */,
+				C0D0F44E2057BD6600BBBAFD /* HCHomeModel.swift */,
+				C0D0F45C2058B4FA00BBBAFD /* HCDateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C05A4AEE204FE46400DC1268 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C025F9192052484800D98EDE /* HCSelectCityService.swift */,
+				C025F91E205271FF00D98EDE /* HCCheckTicketService.swift */,
+				C0D0F4522057C84700BBBAFD /* HCHomeModelService.swift */,
+				C0D0F45E2058F7D600BBBAFD /* HCDateModelService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C05A4AEF204FE46400DC1268 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C025F92420528FE000D98EDE /* HCDatePickerView.swift */,
+				C0D0F4012056602A00BBBAFD /* HCHomeLocationCell.swift */,
+				C0D0F4022056602A00BBBAFD /* HCHomeLocationCell.xib */,
+				C0D0F4582057D6D700BBBAFD /* HCHomeDateCell.swift */,
+				C0D0F4062056604200BBBAFD /* HCHomeDateCell.xib */,
+				C0D0F4092056605400BBBAFD /* HCHomeComfirCell.swift */,
+				C0D0F44A20578C9700BBBAFD /* HCStationSelectView.swift */,
+				C0D0F45A2057D97800BBBAFD /* HCDateViewControllerCell.swift */,
+				C075C6C2205908E0009905C4 /* HCDateSelectTipView.swift */,
+				C075C6EC205A6777009905C4 /* HCCheckTicketCell.swift */,
+				C075C6ED205A6777009905C4 /* HCCheckTicketCell.xib */,
+				C075C6F0205A6C3D009905C4 /* HCCheckTicketOperationView.swift */,
+				242EA515205ACAAB00168632 /* HCTicketDetailHeaderCell.swift */,
+				242EA516205ACAAB00168632 /* HCTicketDetailHeaderCell.xib */,
+				242EA519205ACAD900168632 /* HCTicketDetailDaysCell.swift */,
+				242EA51A205ACAD900168632 /* HCTicketDetailDaysCell.xib */,
+				242EA51D205ACB0300168632 /* HCTicketDetailPriceCell.swift */,
+				242EA51E205ACB0300168632 /* HCTicketDetailPriceCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C05A4AF0204FE46400DC1268 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4AF1204FE46400DC1268 /* Controller */,
+				C05A4AF2204FE46400DC1268 /* Model */,
+				C05A4AF3204FE46400DC1268 /* Service */,
+				C05A4AF4204FE46400DC1268 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		C05A4AF1204FE46400DC1268 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C025F8EF204FEB2700D98EDE /* HCMineNavigationController.swift */,
+				C025F8E7204FE94F00D98EDE /* HCMineViewController.swift */,
+				C075C6DC20593432009905C4 /* HCLoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C05A4AF2204FE46400DC1268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C05A4AF3204FE46400DC1268 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C05A4AF4204FE46400DC1268 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C075C6CA205926EE009905C4 /* HCMineHeaderViewCell.swift */,
+				C075C6CB205926EE009905C4 /* HCMineHeaderViewCell.xib */,
+				C075C6D0205928A6009905C4 /* HCMineInformationCell.swift */,
+				C075C6D1205928A6009905C4 /* HCMineInformationCell.xib */,
+				C075C6D420592B17009905C4 /* HCMineAccountCell.swift */,
+				C075C6D520592B17009905C4 /* HCMineAccountCell.xib */,
+				C075C6D820592CAB009905C4 /* HCMineOrderCell.swift */,
+				C075C6D920592CAB009905C4 /* HCMineOrderCell.xib */,
+				C075C6E0205937A7009905C4 /* HCLoginWriteView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C05A4AF5204FE46400DC1268 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		C05A4AF6204FE46400DC1268 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C025F91B205254A900D98EDE /* Service */,
+				C025F9122051058A00D98EDE /* Extension */,
+				C025F8F8204FF9A100D98EDE /* NetWork */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C05A4AF7204FE46400DC1268 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C075C6EA205A62F8009905C4 /* CheckStaion.json */,
+				C075C6E4205A10DE009905C4 /* Stations.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C05A4AFA204FE50A00DC1268 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4AFB204FE50A00DC1268 /* Controller */,
+				C05A4AFC204FE50A00DC1268 /* Model */,
+				C05A4AFD204FE50A00DC1268 /* Service */,
+				C05A4AFE204FE50A00DC1268 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C05A4AFB204FE50A00DC1268 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C05A4B03204FE65900DC1268 /* HCMainTabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C05A4AFC204FE50A00DC1268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C05A4AFD204FE50A00DC1268 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C05A4AFE204FE50A00DC1268 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C025F9262052971E00D98EDE /* HCProgressHUB.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF264ED9B132233D7B9FEFB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94B7818865477EFFFE0EF4B4 /* Pods-hcp_ios.debug.xcconfig */,
+				E514879B6F6714110E002FFA /* Pods-hcp_ios.release.xcconfig */,
+				10495FBA7EE1BFE40C020F3F /* Pods-hcp_iosTests.debug.xcconfig */,
+				CEF7B386465A445657337D7B /* Pods-hcp_iosTests.release.xcconfig */,
+				BAF021E3006853A8DF5D2AA4 /* Pods-hcp_iosUITests.debug.xcconfig */,
+				1840D8D4A298A356538EBD54 /* Pods-hcp_iosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C05A4AB1204FDFE500DC1268 /* hcp_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05A4ADA204FDFE500DC1268 /* Build configuration list for PBXNativeTarget "hcp_ios" */;
+			buildPhases = (
+				C9D12617D440FA94B1F202EC /* [CP] Check Pods Manifest.lock */,
+				C05A4AAE204FDFE500DC1268 /* Sources */,
+				C05A4AAF204FDFE500DC1268 /* Frameworks */,
+				C05A4AB0204FDFE500DC1268 /* Resources */,
+				4B55E62C998A20CABBB4748A /* [CP] Embed Pods Frameworks */,
+				A229B8198BF702F06495C4A7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hcp_ios;
+			productName = hcp_ios;
+			productReference = C05A4AB2204FDFE500DC1268 /* hcp_ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C05A4AC5204FDFE500DC1268 /* hcp_iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05A4ADD204FDFE500DC1268 /* Build configuration list for PBXNativeTarget "hcp_iosTests" */;
+			buildPhases = (
+				FCB34634D9155064535F913C /* [CP] Check Pods Manifest.lock */,
+				C05A4AC2204FDFE500DC1268 /* Sources */,
+				C05A4AC3204FDFE500DC1268 /* Frameworks */,
+				C05A4AC4204FDFE500DC1268 /* Resources */,
+				F8DA3704471973A7C726ADD0 /* [CP] Embed Pods Frameworks */,
+				29DBFA050A9C5DF01F5AA2A6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C05A4AC8204FDFE500DC1268 /* PBXTargetDependency */,
+			);
+			name = hcp_iosTests;
+			productName = hcp_iosTests;
+			productReference = C05A4AC6204FDFE500DC1268 /* hcp_iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C05A4AD0204FDFE500DC1268 /* hcp_iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05A4AE0204FDFE500DC1268 /* Build configuration list for PBXNativeTarget "hcp_iosUITests" */;
+			buildPhases = (
+				042F800990C10589D993D2F2 /* [CP] Check Pods Manifest.lock */,
+				C05A4ACD204FDFE500DC1268 /* Sources */,
+				C05A4ACE204FDFE500DC1268 /* Frameworks */,
+				C05A4ACF204FDFE500DC1268 /* Resources */,
+				04E8165FCC4102703D96D55F /* [CP] Embed Pods Frameworks */,
+				FFD62BB95AAD6B1382E63F94 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C05A4AD3204FDFE500DC1268 /* PBXTargetDependency */,
+			);
+			name = hcp_iosUITests;
+			productName = hcp_iosUITests;
+			productReference = C05A4AD1204FDFE500DC1268 /* hcp_iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C05A4AAA204FDFE500DC1268 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HC;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Hanson;
+				TargetAttributes = {
+					C05A4AB1204FDFE500DC1268 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					C05A4AC5204FDFE500DC1268 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C05A4AB1204FDFE500DC1268;
+					};
+					C05A4AD0204FDFE500DC1268 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C05A4AB1204FDFE500DC1268;
+					};
+				};
+			};
+			buildConfigurationList = C05A4AAD204FDFE500DC1268 /* Build configuration list for PBXProject "hcp_ios" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C05A4AA9204FDFE500DC1268;
+			productRefGroup = C05A4AB3204FDFE500DC1268 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C05A4AB1204FDFE500DC1268 /* hcp_ios */,
+				C05A4AC5204FDFE500DC1268 /* hcp_iosTests */,
+				C05A4AD0204FDFE500DC1268 /* hcp_iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C05A4AB0204FDFE500DC1268 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C075C6D720592B17009905C4 /* HCMineAccountCell.xib in Resources */,
+				C075C6D3205928A6009905C4 /* HCMineInformationCell.xib in Resources */,
+				C0D0F4042056602A00BBBAFD /* HCHomeLocationCell.xib in Resources */,
+				242EA52E205ADCED00168632 /* HCSettingGrabAddCell.xib in Resources */,
+				C075C6EF205A6777009905C4 /* HCCheckTicketCell.xib in Resources */,
+				242EA526205AD94D00168632 /* HCSettingGrabStationCell.xib in Resources */,
+				C0D0F4082056604200BBBAFD /* HCHomeDateCell.xib in Resources */,
+				C075C6DB20592CAB009905C4 /* HCMineOrderCell.xib in Resources */,
+				242EA518205ACAAB00168632 /* HCTicketDetailHeaderCell.xib in Resources */,
+				C075C6E9205A4DD9009905C4 /* HCGrabViewControllerCell.xib in Resources */,
+				C05A4AC0204FDFE500DC1268 /* LaunchScreen.storyboard in Resources */,
+				C075C6EB205A62F8009905C4 /* CheckStaion.json in Resources */,
+				C075C6CD205926EE009905C4 /* HCMineHeaderViewCell.xib in Resources */,
+				242EA52A205AD9ED00168632 /* HCSettingGrabDateCell.xib in Resources */,
+				C075C6E5205A10DF009905C4 /* Stations.json in Resources */,
+				242EA51C205ACAD900168632 /* HCTicketDetailDaysCell.xib in Resources */,
+				242EA520205ACB0300168632 /* HCTicketDetailPriceCell.xib in Resources */,
+				242EA532205ADD2600168632 /* HCSettingGrabPhoneCell.xib in Resources */,
+				C05A4ABD204FDFE500DC1268 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C05A4AC4204FDFE500DC1268 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C05A4ACF204FDFE500DC1268 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		042F800990C10589D993D2F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hcp_iosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		04E8165FCC4102703D96D55F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hcp_iosUITests/Pods-hcp_iosUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29DBFA050A9C5DF01F5AA2A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hcp_iosTests/Pods-hcp_iosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B55E62C998A20CABBB4748A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-hcp_ios/Pods-hcp_ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hcp_ios/Pods-hcp_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A229B8198BF702F06495C4A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hcp_ios/Pods-hcp_ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9D12617D440FA94B1F202EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hcp_ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8DA3704471973A7C726ADD0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hcp_iosTests/Pods-hcp_iosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCB34634D9155064535F913C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hcp_iosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFD62BB95AAD6B1382E63F94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hcp_iosUITests/Pods-hcp_iosUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C05A4AAE204FDFE500DC1268 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C075C6E8205A4DD9009905C4 /* HCGrabViewControllerCell.swift in Sources */,
+				C0D0F4032056602A00BBBAFD /* HCHomeLocationCell.swift in Sources */,
+				242EA522205AD81B00168632 /* HCSettingGrabViewController.swift in Sources */,
+				C075C6CC205926EE009905C4 /* HCMineHeaderViewCell.swift in Sources */,
+				242EA531205ADD2600168632 /* HCSettingGrabPhoneCell.swift in Sources */,
+				C075C6EE205A6777009905C4 /* HCCheckTicketCell.swift in Sources */,
+				C075C6C52059099D009905C4 /* UILabel+Extension.swift in Sources */,
+				242EA51F205ACB0300168632 /* HCTicketDetailPriceCell.swift in Sources */,
+				C025F9272052971E00D98EDE /* HCProgressHUB.swift in Sources */,
+				C025F92D20560B2000D98EDE /* HCNetworkManager.swift in Sources */,
+				242EA525205AD94D00168632 /* HCSettingGrabStationCell.swift in Sources */,
+				C025F8EA204FEA7400D98EDE /* HCBaseNavigationController.swift in Sources */,
+				242EA534205AE56500168632 /* HCSettingGrabSuccessViewController.swift in Sources */,
+				C025F8F5204FEE9600D98EDE /* DefineColorFile.swift in Sources */,
+				C0D0F4572057D1AB00BBBAFD /* HCDateViewController.swift in Sources */,
+				242EA514205AC9A200168632 /* HCTicketDetailViewController.swift in Sources */,
+				C0D0F44B20578C9700BBBAFD /* HCStationSelectView.swift in Sources */,
+				C025F9162052456800D98EDE /* HCSelectCityViewController.swift in Sources */,
+				C025F92520528FE000D98EDE /* HCDatePickerView.swift in Sources */,
+				242EA517205ACAAB00168632 /* HCTicketDetailHeaderCell.swift in Sources */,
+				C075C6F1205A6C3D009905C4 /* HCCheckTicketOperationView.swift in Sources */,
+				C0D0F45F2058F7D600BBBAFD /* HCDateModelService.swift in Sources */,
+				C0D0F44D2057A27A00BBBAFD /* HCHomeSelectCityStatusModel.swift in Sources */,
+				C0D0F45D2058B4FA00BBBAFD /* HCDateModel.swift in Sources */,
+				C075C6D2205928A6009905C4 /* HCMineInformationCell.swift in Sources */,
+				C0D0F4512057BDF100BBBAFD /* HCHomeTimeModel.swift in Sources */,
+				C025F93D2056355B00D98EDE /* HCGrabNavigationController.swift in Sources */,
+				C025F93E2056355B00D98EDE /* HCGrabViewController.swift in Sources */,
+				C05A4B06204FE67F00DC1268 /* HCHomeViewController.swift in Sources */,
+				C05A4B04204FE65900DC1268 /* HCMainTabBarController.swift in Sources */,
+				C025F93120561C0B00D98EDE /* UIButton+Extension.swift in Sources */,
+				C025F91D205254BB00D98EDE /* HCTimeService.swift in Sources */,
+				C0D0F4592057D6D700BBBAFD /* HCHomeDateCell.swift in Sources */,
+				C025F923205282FF00D98EDE /* HCViewCornerSerivice.swift in Sources */,
+				C025F9112050FA0D00D98EDE /* HCCheckResultStatus.swift in Sources */,
+				C075C6DE20593432009905C4 /* HCLoginViewController.swift in Sources */,
+				C0D0F44F2057BD6600BBBAFD /* HCHomeModel.swift in Sources */,
+				C05A4B02204FE63200DC1268 /* HCBaseViewController.swift in Sources */,
+				C025F91F205271FF00D98EDE /* HCCheckTicketService.swift in Sources */,
+				C025F8F7204FF13800D98EDE /* DefineSizeFile.swift in Sources */,
+				C075C6E1205937A7009905C4 /* HCLoginWriteView.swift in Sources */,
+				C025F8E8204FE94F00D98EDE /* HCMineViewController.swift in Sources */,
+				C0D0F4532057C84700BBBAFD /* HCHomeModelService.swift in Sources */,
+				C075C6C9205923B6009905C4 /* HCCustomButton.swift in Sources */,
+				C025F92F20561BAE00D98EDE /* UIBarButtonItem+Extension.swift in Sources */,
+				C075C6C3205908E0009905C4 /* HCDateSelectTipView.swift in Sources */,
+				C0D0F40A2056605400BBBAFD /* HCHomeComfirCell.swift in Sources */,
+				C025F8F0204FEB2700D98EDE /* HCMineNavigationController.swift in Sources */,
+				C075C6DA20592CAB009905C4 /* HCMineOrderCell.swift in Sources */,
+				C0D0F4552057C90B00BBBAFD /* DefineSystem.swift in Sources */,
+				C075C6F3205B616A009905C4 /* HCTicketOrderViewController.swift in Sources */,
+				C025F8F2204FEB3E00D98EDE /* HCHomeNavigationController.swift in Sources */,
+				242EA52D205ADCED00168632 /* HCSettingGrabAddCell.swift in Sources */,
+				242EA529205AD9ED00168632 /* HCSettingGrabDateCell.swift in Sources */,
+				C025F91A2052484800D98EDE /* HCSelectCityService.swift in Sources */,
+				C075C6D620592B17009905C4 /* HCMineAccountCell.swift in Sources */,
+				C075C6C720590E27009905C4 /* UIAlertController+Extension.swift in Sources */,
+				C0D0F45B2057D97800BBBAFD /* HCDateViewControllerCell.swift in Sources */,
+				242EA51B205ACAD900168632 /* HCTicketDetailDaysCell.swift in Sources */,
+				C025F9142051064200D98EDE /* String+Extension.swift in Sources */,
+				C025F921205277C800D98EDE /* HCConfirmButton.swift in Sources */,
+				C05A4AB6204FDFE500DC1268 /* AppDelegate.swift in Sources */,
+				C075C6E3205A033B009905C4 /* UIView+Extension.swift in Sources */,
+				C025F90F2050F9DF00D98EDE /* HCCheckTicketViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C05A4AC2204FDFE500DC1268 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C05A4ACB204FDFE500DC1268 /* hcp_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C05A4ACD204FDFE500DC1268 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C05A4AD6204FDFE500DC1268 /* hcp_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C05A4AC8204FDFE500DC1268 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C05A4AB1204FDFE500DC1268 /* hcp_ios */;
+			targetProxy = C05A4AC7204FDFE500DC1268 /* PBXContainerItemProxy */;
+		};
+		C05A4AD3204FDFE500DC1268 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C05A4AB1204FDFE500DC1268 /* hcp_ios */;
+			targetProxy = C05A4AD2204FDFE500DC1268 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C05A4ABE204FDFE500DC1268 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C05A4ABF204FDFE500DC1268 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C05A4AD8204FDFE500DC1268 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C05A4AD9204FDFE500DC1268 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C05A4ADB204FDFE500DC1268 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94B7818865477EFFFE0EF4B4 /* Pods-hcp_ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ENY487NC4;
+				INFOPLIST_FILE = hcp_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiangxin.hcp-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "hcp_ios/AppDelegate/hcp_ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C05A4ADC204FDFE500DC1268 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E514879B6F6714110E002FFA /* Pods-hcp_ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ENY487NC4;
+				INFOPLIST_FILE = hcp_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiangxin.hcp-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "hcp_ios/AppDelegate/hcp_ios-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C05A4ADE204FDFE500DC1268 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10495FBA7EE1BFE40C020F3F /* Pods-hcp_iosTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ENY487NC4;
+				INFOPLIST_FILE = hcp_iosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiangxin.hcp-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hcp_ios.app/hcp_ios";
+			};
+			name = Debug;
+		};
+		C05A4ADF204FDFE500DC1268 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEF7B386465A445657337D7B /* Pods-hcp_iosTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ENY487NC4;
+				INFOPLIST_FILE = hcp_iosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiangxin.hcp-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hcp_ios.app/hcp_ios";
+			};
+			name = Release;
+		};
+		C05A4AE1204FDFE500DC1268 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAF021E3006853A8DF5D2AA4 /* Pods-hcp_iosUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ENY487NC4;
+				INFOPLIST_FILE = hcp_iosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiangxin.hcp-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hcp_ios;
+			};
+			name = Debug;
+		};
+		C05A4AE2204FDFE500DC1268 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1840D8D4A298A356538EBD54 /* Pods-hcp_iosUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ENY487NC4;
+				INFOPLIST_FILE = hcp_iosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiangxin.hcp-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hcp_ios;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C05A4AAD204FDFE500DC1268 /* Build configuration list for PBXProject "hcp_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05A4AD8204FDFE500DC1268 /* Debug */,
+				C05A4AD9204FDFE500DC1268 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C05A4ADA204FDFE500DC1268 /* Build configuration list for PBXNativeTarget "hcp_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05A4ADB204FDFE500DC1268 /* Debug */,
+				C05A4ADC204FDFE500DC1268 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C05A4ADD204FDFE500DC1268 /* Build configuration list for PBXNativeTarget "hcp_iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05A4ADE204FDFE500DC1268 /* Debug */,
+				C05A4ADF204FDFE500DC1268 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C05A4AE0204FDFE500DC1268 /* Build configuration list for PBXNativeTarget "hcp_iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05A4AE1204FDFE500DC1268 /* Debug */,
+				C05A4AE2204FDFE500DC1268 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C05A4AAA204FDFE500DC1268 /* Project object */;
+}

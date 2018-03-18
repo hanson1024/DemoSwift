@@ -1,0 +1,101 @@
+//
+//  HCGrabViewControllerCell.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/15.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+import SnapKit
+
+enum HCGrabViewControllerCellType {
+    case order
+    case pay
+    case check
+}
+
+class HCGrabViewControllerCell: UITableViewCell {
+    
+    @IBOutlet weak var orderButton: UIButton!
+    @IBOutlet weak var payButton: UIButton!
+    @IBOutlet weak var checkButton: UIButton!
+    
+    @IBOutlet weak var titleNameLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    @IBOutlet weak var backView: UIView!
+    
+    var lineView: UIView?
+    
+    var cellType: HCGrabViewControllerCellType? {
+        
+        didSet {
+            
+            switch cellType {
+            case .order?:
+                orderButton.isHidden = false
+                checkButton.isHidden = true
+                payButton.isHidden = true
+            case .pay?:
+                orderButton.isHidden = true
+                checkButton.isHidden = true
+                payButton.isHidden = false
+            case .check?:
+                orderButton.isHidden = true
+                checkButton.isHidden = false
+                payButton.isHidden = true
+            default:break
+                
+            }
+        }
+    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        orderButton.corner(radii: 5)
+        payButton.corner(radii: 5)
+        checkButton.corner(radii: 5, lineColor: UIColor.init(hexString: "#5395E6")!)
+        
+        lineView = UIView(frame: CGRect(x: 15, y: 95, width: kScreenWidth - 15 * 2 - 16 * 2, height: 0.5))
+        lineView?.backgroundColor = UIColor.white
+        self.contentView.addSubview(lineView!)
+        
+        lineView?.dashedLineView(lineColor: UIColor.init(hexString: "#D8D8D8")!)
+        
+        
+        orderButton.isHidden = true
+        payButton.isHidden = true
+        checkButton.isHidden = true
+        
+        backView.corner(radii: 5)
+        
+        self.selectionStyle = .none
+        // Initialization code
+    }
+    
+    @IBAction func didClickOrderButton(_ sender: UIButton) {
+        
+        
+    }
+    
+    @IBAction func didClickPayButton(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func didClickCheckButton(_ sender: UIButton) {
+        
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

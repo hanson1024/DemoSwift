@@ -1,0 +1,13 @@
+//
+//  HCDateModelService.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/14.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCDateModelService: NSObject {
+
+}

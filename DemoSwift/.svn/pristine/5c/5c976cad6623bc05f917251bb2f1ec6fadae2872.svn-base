@@ -1,0 +1,28 @@
+//
+//  HCSelectTrainNumCell.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/16.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCSelectTrainNumCell: UITableViewCell {
+
+    @IBOutlet weak var selectButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectionStyle = .none
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

@@ -1,0 +1,160 @@
+//
+//  HCSelectCityViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/9.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCSelectCityViewController: HCBaseViewController {
+    
+    private let cellIdentifier = "HCSelectCityViewControllerCell"
+    private let headerCellIdentifier = "HCSelectCityViewControllerHeaderCellIdentifier"
+    var cityList = [[CityModel]]()
+    
+    var isDeparture = false
+    var selectView: HCStationSelectView?
+    
+    var didSelectCallBack:((_ model: CityModel) -> Void)?
+    
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addSelectView()
+        
+        settingBaseInformation()
+        
+        settingTableView()
+        
+        loadSelectCityData()
+        
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - private methods
+    func settingBaseInformation() {
+        
+        navItem.title = isDeparture ? "出发站" : "到达站"
+        
+        navItem.rightBarButtonItem = UIBarButtonItem(customView: HCCustomButton.create(title: "确定", didClickCall: {[weak self] in
+            self?.back()
+        }))
+    }
+    
+    func settingTableView() {
+        
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: headerCellIdentifier)
+        tableView?.contentInset = UIEdgeInsetsMake((selectView?.frame.maxY)!, 0, 0, 0)
+        tableView?.separatorStyle = .singleLine
+    }
+    
+    func addSelectView() {
+        
+        selectView = HCStationSelectView(frame: CGRect(x: 0, y: kStatusAndNavBarHeight, width: kScreenWidth, height: 41))
+        self.view.addSubview(selectView!)
+    }
+    
+    func loadSelectCityData() {
+        
+//        HCNetworkManager.shared.request(URLString: "http://192.168.10.243:8180/okhcp/module/Stations/getAllStationsByLetters", parameters: nil) { (respond, isSuccess) in
+//
+//            print(respond ?? "")
+        
+//            self.cityList = HCSelectCityService.getDictList(citys: respond as! String)
+//            self.cityTableView?.reloadData()
+//        }
+        
+        HCSelectCityService.getCities {[weak self] (cityList)  in
+            
+            self?.cityList = cityList
+            self?.tableView?.reloadData()
+            
+        }
+        
+    }
+    
+    
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return cityList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let list = cityList[section]
+        return list.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        
+        let list = cityList[indexPath.section]
+        let cityModel = list[indexPath.row]
+        cell.textLabel?.text = cityModel.name
+        
+        return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 30
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let list = cityList[section]
+        let cityModel = list.first
+        
+        var cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerCellIdentifier)
+        if cell == nil {
+            cell = UITableViewHeaderFooterView(reuseIdentifier: headerCellIdentifier)
+        }
+        cell?.textLabel?.text = cityModel?.characterFirst
+        
+        return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let list = cityList[indexPath.section]
+        let cityModel = list[indexPath.row]
+        
+        (didSelectCallBack != nil) ? didSelectCallBack!(cityModel) : ()
+        
+        back()
+    }
+    
+    // MARK: - event response
+
+}
+
+

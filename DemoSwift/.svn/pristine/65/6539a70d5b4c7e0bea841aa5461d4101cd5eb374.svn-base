@@ -1,0 +1,49 @@
+//
+//  HCCheckTicketService.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/9.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+import Foundation
+import SwiftyJSON
+
+class HCCheckTicketService: NSObject {
+    
+    typealias getTicketSuccessCallBack = (_ dataSoure : Array<TicketResult>) -> Void
+    
+    class func getTicket(successCallBack : getTicketSuccessCallBack?) -> Void {
+        
+        DispatchQueue.global().async {
+            
+            var list = [TicketResult]()
+            
+            let json = String.loadLocalData(pathName: "CheckStaion.json")
+            
+            if let result = JSON(parseJSON: json)["result"].dictionary {
+                
+                if let items = result["ticketResult"]?.array {
+                    
+                    for item in items {
+                        
+                        list.append(TicketResult(fromJson: item))
+                    }
+                }
+            }
+            
+            
+            
+            DispatchQueue.main.async {
+                
+                if successCallBack != nil {
+                    
+                    successCallBack!(list)
+                }
+            }
+        }
+        
+    }
+
+}

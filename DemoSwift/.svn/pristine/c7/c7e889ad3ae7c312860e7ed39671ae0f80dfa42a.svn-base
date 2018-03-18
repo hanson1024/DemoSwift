@@ -1,0 +1,64 @@
+//
+//  HCHomeLocationCell.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/12.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+enum HCHomeLocationType {
+    case departure
+    case destination
+    case arrow
+}
+
+class HCHomeLocationCell: UITableViewCell {
+    
+    @IBOutlet weak var departtureButton: UIButton!
+    
+    @IBOutlet weak var destinationButton: UIButton!
+    
+    var didClickCallBack: ((_ buttonType: HCHomeLocationType) -> Void)?
+    
+    var homeModel = HCHomeModel() {
+        
+        didSet{
+            
+            departtureButton.setTitle(homeModel.selectDepartureCityStatusModel.cityModel.city, for: .normal)
+            destinationButton.setTitle(homeModel.selectDestinationCityStatusModel.cityModel.city, for: .normal)
+        }
+    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.selectionStyle = .none
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    @IBAction func didClick(_ sender: UIButton) {
+        
+        switch sender.tag {
+        case 99:
+            didClickCallBack!(.departure)
+        case 88:
+            didClickCallBack!(.arrow)
+        case 77:
+            didClickCallBack!(.destination)
+        default: break
+            
+        }
+    }
+    
+    
+    
+}

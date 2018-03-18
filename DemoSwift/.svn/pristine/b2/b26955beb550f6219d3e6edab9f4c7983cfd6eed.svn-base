@@ -1,0 +1,77 @@
+//
+//  HCSelectCityStatusModel.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/13.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+//
+//    RootClass.swift
+//    Model file Generated using:
+//    Vin.Favara's JSONExportV https://github.com/vivi7/JSONExport
+//    (forked from Ahmed-Ali's JSONExport)
+//
+
+import Foundation
+import SwiftyJSON
+
+
+class CityModel : NSObject{
+    
+    var idCode: String?
+    var status: Int = 0
+    var id: Int = 0
+    var pinyinAbbr: String?
+    var pinyinFull: String?
+    var lastUpdateTime: String?
+    var telecode: String?
+    var name: String?
+    var pinyinFirst: String?
+    var characterFirst: String?
+
+    
+//    "id": 532,
+//    "name": "昂昂溪",
+//    "telecode": "AAX",
+//    "pinyinAbbr": "aax",
+//    "pinyinFirst": "aax",
+//    "pinyinFull": "angangxi",
+//    "idCode": "531",
+//    "status": 1,
+//    "lastUpdateTime": "2018-03-07 10:40:10"
+    
+    /**
+     * Instantiate the instance using the passed json values to set the properties values
+     */
+    init(fromJson json: JSON!){
+        
+        if json == nil{
+            return
+        }
+        
+        idCode = json["idCode"].stringValue
+        status = json["status"].intValue
+        id = json["id"].intValue
+        pinyinAbbr = json["pinyinAbbr"].stringValue
+        pinyinFull = json["pinyinFull"].stringValue
+        lastUpdateTime = json["lastUpdateTime"].stringValue
+        telecode = json["telecode"].stringValue
+        name = json["name"].stringValue
+        pinyinFirst = json["pinyinFirst"].stringValue
+        
+        if let character = telecode?.first {
+            characterFirst = character.description
+        }
+        
+    }
+}
+
+class HCHomeSelectCityStatusModel: NSObject {
+    
+    var type: HCHomeLocationType?
+    var cityModel = CityModel(fromJson: nil)
+}
+

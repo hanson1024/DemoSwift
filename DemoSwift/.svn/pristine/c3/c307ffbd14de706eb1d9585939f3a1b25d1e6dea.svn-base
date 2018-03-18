@@ -1,0 +1,37 @@
+//
+//  HCHomeModelService.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/13.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCHomeModelService: NSObject {
+    
+   class func saveHomeModelToSandbox(homeModel: HCHomeModel) -> Bool {
+        
+        kUserDefaults().set(homeModel.selectDepartureCityStatusModel.cityModel.city, forKey:departureCityKey)
+        kUserDefaults().set(homeModel.selectDestinationCityStatusModel.cityModel.city, forKey:destinationCityKey)
+        kUserDefaults().synchronize()
+        
+        return true
+    }
+    
+    class func getHomeModelFromSandbox() -> HCHomeModel {
+        
+        let homeModel = HCHomeModel()
+        
+        guard let departureCity = kUserDefaults().object(forKey: departureCityKey),let destinationCity = kUserDefaults().object(forKey: destinationCityKey) else {
+            
+            return homeModel
+        }
+        
+        homeModel.selectDepartureCityStatusModel.cityModel.city = departureCity as! String
+        homeModel.selectDestinationCityStatusModel.cityModel.city = destinationCity as! String
+        
+        return homeModel
+    }
+
+}

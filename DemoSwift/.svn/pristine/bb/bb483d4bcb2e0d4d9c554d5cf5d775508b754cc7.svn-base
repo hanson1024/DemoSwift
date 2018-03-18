@@ -1,0 +1,64 @@
+//
+//  HCTicketDetailPriceCell.swift
+//  hcp_ios
+//
+//  Created by Luuuo on 2018/3/15.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCTicketDetailPriceCell: UITableViewCell {
+
+    @IBOutlet weak var seatClassLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var ticketCountLabel: UILabel!
+    @IBOutlet weak var orderTicketButton: UIButton!
+    @IBOutlet weak var grabTicketButton: UIButton!
+    @IBOutlet weak var bookingTicketButton: UIButton!
+    
+    var cellType: HCGrabViewControllerCellType? {
+        
+        didSet {
+            
+            switch cellType {
+            case .order?:
+                orderTicketButton.isHidden = false
+                grabTicketButton.isHidden = true
+                bookingTicketButton.isHidden = true
+            case .pay?:
+                orderTicketButton.isHidden = true
+                grabTicketButton.isHidden = true
+                bookingTicketButton.isHidden = false
+            case .check?:
+                orderTicketButton.isHidden = true
+                grabTicketButton.isHidden = false
+                bookingTicketButton.isHidden = true
+            default:break
+                
+            }
+        }
+    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        orderTicketButton.corner(radii: 5)
+        grabTicketButton.corner(radii: 5)
+        bookingTicketButton.corner(radii: 5)
+        
+        orderTicketButton.isHidden = true
+        grabTicketButton.isHidden = true
+//        bookingTicketButton.isHidden = true
+        
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

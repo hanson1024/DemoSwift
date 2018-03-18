@@ -1,0 +1,52 @@
+//
+//  HCResultStatus.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/8.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class TicketResult :NSObject {
+    var yp_info: String?
+    var station_train_code: String?
+    var arrive_time: String?
+    var is_support_card: String?
+    var yp_info_cover: String?
+    var controlled_train_message: String?
+    var yp_ex: String?
+    var flag: String?
+    var train_no: String?
+    var location_code: String?
+    var from_station_name: String?
+    var exchange_train_flag: String?
+    var yp_info_coverFlag: String?
+    var start_train_date: String?
+    var day_difference: String?
+    var controlled_train_flag: String?
+    var from_station_telecode: String?
+    var message: String?
+    var lishi: String?
+    var start_station_telecode: String?
+    var start_time: String?
+    var to_station_telecode: String?
+    var end_station_telecode: String?
+    var to_station_name: String?
+    
+    required override init() { }
+}
+
+class Result :NSObject {
+    var fallbackOperationType: String?
+    var succ_flag: String?
+    var ticketResult: [TicketResult]?
+    var error_msg: String?
+    required override init() { }
+}
+
+class HCCheckResultStatus :NSObject {
+    var result: Result?
+    var resultStatus: Int = 0
+    required override init() { }
+}

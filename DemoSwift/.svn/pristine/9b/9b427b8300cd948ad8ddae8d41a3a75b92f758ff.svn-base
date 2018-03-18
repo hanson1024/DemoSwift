@@ -1,0 +1,41 @@
+//
+//  HCHomeDateCell.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/12.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCHomeDateCell: UITableViewCell {
+
+    @IBOutlet weak var dateButton: UIButton!
+    
+    var timeModel = HCHomeTimeModel(){
+        
+        didSet{
+            
+            dateButton.setTitle(timeModel.time, for: .normal)
+        }
+    }
+    
+    var didClickCallBack: (() -> Void)?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = .none
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    @IBAction func didClickButton(_ sender: UIButton) {
+        didClickCallBack!()
+    }
+    
+}

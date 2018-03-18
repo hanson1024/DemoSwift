@@ -1,0 +1,185 @@
+//
+//  HCHomeViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/7.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCHomeViewController: HCBaseViewController {
+    let HCHomeLocationCellIdentifier = "HCHomeLocationCell"
+    let HCHomeDateCellIdentifier = "HCHomeDateCell"
+    let HCHomeComfirCellIdentifier = "HCHomeComfirCell"
+    
+    private var departureDate = Date()
+    private var dateFormatter: DateFormatter!
+    private var selectDates: Array<Date>!
+    private var homeModel: HCHomeModel?
+    private var timeModel: HCHomeTimeModel?
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        settingBaseInformation()
+        
+        settingTableView()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - private methods
+    
+    func settingBaseInformation() {
+        
+        navItem.title = "火车票"
+        
+        DispatchQueue.global().async {
+            
+            self.selectDates = Array()
+            
+            self.dateFormatter = DateFormatter()
+            self.dateFormatter.dateStyle = .full
+            self.dateFormatter.timeStyle = .none
+            self.dateFormatter.locale = Locale(identifier: "zh_Hans_CN")
+            
+            self.homeModel = HCHomeModelService.getHomeModelFromSandbox()
+            
+            if self.homeModel?.selectDepartureCityStatusModel.cityModel.name?.count == 0 {
+                self.homeModel?.selectDepartureCityStatusModel.type = .departure
+                self.homeModel?.selectDepartureCityStatusModel.cityModel.name = "上海"
+                self.homeModel?.selectDestinationCityStatusModel.type = .destination
+                self.homeModel?.selectDestinationCityStatusModel.cityModel.name = "北京"
+                _ = HCHomeModelService.saveHomeModelToSandbox(homeModel: self.homeModel!)
+            }
+            
+            self.dateFormatter.dateFormat = "MM-dd"
+            self.timeModel = HCHomeTimeModel()
+            self.timeModel?.time = self.dateFormatter.string(from: self.departureDate) + " 今天"
+            
+            DispatchQueue.main.async {
+                
+                self.tableView?.reloadData()
+            }
+        }
+    }
+    
+    func settingTableView() {
+        
+        tableView?.register(UINib.init(nibName: "HCHomeLocationCell", bundle: nil), forCellReuseIdentifier: HCHomeLocationCellIdentifier)
+        tableView?.register(UINib.init(nibName: "HCHomeDateCell", bundle: nil), forCellReuseIdentifier: HCHomeDateCellIdentifier)
+        tableView?.register(HCHomeComfirCell.self, forCellReuseIdentifier: HCHomeComfirCellIdentifier)
+        tableView?.backgroundColor = UIColor.white
+    }
+    
+    func goToSelectCityViewController(departure: Bool) {
+        
+        let selectCityViewController = HCSelectCityViewController()
+        selectCityViewController.isDeparture = departure
+        
+        navigationController?.pushViewController(selectCityViewController, animated: true)
+        
+        selectCityViewController.didSelectCallBack = { [weak self] (cityModel: CityModel) -> Void in
+            
+            if departure {
+                self?.homeModel?.selectDepartureCityStatusModel.cityModel = cityModel
+            }else{
+                self?.homeModel?.selectDestinationCityStatusModel.cityModel = cityModel
+            }
+            
+            _ = HCHomeModelService.saveHomeModelToSandbox(homeModel: (self?.homeModel)!)
+            
+            self?.tableView?.reloadRow(at: IndexPath(row: 0, section: 0), with: .none)
+        }
+    }
+    
+    func goToCalendar()  {
+        
+        navigationController?.pushViewController(HCDateViewController(), animated: true)
+    }
+    
+    func goToCheckTicket() {
+        
+        let checkTicketViewController = HCCheckTicketViewController()
+        checkTicketViewController.checkTicketModel = homeModel
+        
+        navigationController?.pushViewController(checkTicketViewController, animated: true)
+    }
+    
+    // MARK: - Delegate
+    
+    // MARK: - tableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        var height: CGFloat = 44
+        
+        switch indexPath.row {
+        case 0:
+            height = 75
+        case 1:
+            height = 60
+        case 2:
+            height = 82
+        default: break
+        }
+        
+        return height
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HCHomeLocationCellIdentifier, for: indexPath) as! HCHomeLocationCell
+            
+            cell.homeModel = homeModel!
+            cell.didClickCallBack = {(type: HCHomeLocationType) -> Void in
+                
+                switch type {
+                case .departure:
+                    print("始发站")
+                    self.goToSelectCityViewController(departure: true)
+                case .destination:
+                    print("终点站")
+                    self.goToSelectCityViewController(departure: false)
+                case .arrow:
+                    print("交换")
+                }
+            }
+            
+            return cell
+        }else if indexPath.row == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: HCHomeDateCellIdentifier, for: indexPath) as! HCHomeDateCell
+            cell.timeModel = timeModel!
+            
+            cell.didClickCallBack = {[weak self] in
+                
+                self?.goToCalendar()
+            }
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: HCHomeComfirCellIdentifier, for: indexPath) as! HCHomeComfirCell
+            
+            cell.didClickCallBack = {[weak self] in
+                
+                self?.goToCheckTicket()
+            }
+            
+            return cell
+        }
+        
+    }
+    
+    // MARK: - event response
+    
+    
+
+}

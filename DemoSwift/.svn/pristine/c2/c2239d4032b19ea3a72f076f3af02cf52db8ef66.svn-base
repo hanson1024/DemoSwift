@@ -1,0 +1,147 @@
+//
+//  HCMineViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/7.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCMineViewController: HCBaseViewController {
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navgationBar.isHidden = true
+        
+        settingTableView()
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    // MARK: - private methods
+    
+    func settingTableView() {
+        
+        tableView?.register(UINib.init(nibName: HCMineHeaderViewCellIdentifier, bundle: nil), forCellReuseIdentifier: HCMineHeaderViewCellIdentifier)
+        tableView?.register(UINib.init(nibName: HCMineInformationCellIdentifier, bundle: nil), forCellReuseIdentifier: HCMineInformationCellIdentifier)
+        tableView?.register(UINib.init(nibName: HCMineAccountCellIdentifier, bundle: nil), forCellReuseIdentifier: HCMineAccountCellIdentifier)
+        tableView?.register(UINib.init(nibName: HCMineOrderCellIdentifier, bundle: nil), forCellReuseIdentifier: HCMineOrderCellIdentifier)
+        tableView?.backgroundColor = UIColor.init(hexString: "#F6F6F6")
+        tableView?.contentInset = UIEdgeInsetsMake(kStatusBarHeight, 0, 0, 0)
+        tableView?.bounces = false
+    }
+    
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 4
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+       return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: HCMineHeaderViewCellIdentifier, for: indexPath)
+            return cell
+            
+        } else if indexPath.section == 1 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: HCMineInformationCellIdentifier, for: indexPath)
+            return cell
+            
+        } else if indexPath.section == 2 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: HCMineAccountCellIdentifier, for: indexPath)
+            return cell
+            
+        } else{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: HCMineOrderCellIdentifier, for: indexPath)
+            return cell
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+
+            return 150
+            
+        } else if indexPath.section == 1  {
+            
+            return 76
+            
+        } else if indexPath.section == 2  {
+            
+            return 50
+            
+        } else{
+            
+            return 50
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 0 {
+            
+            return CGFloat.leastNormalMagnitude
+            
+        } else if section == 1  {
+            
+            return CGFloat.leastNormalMagnitude
+            
+        } else if section == 2  {
+            
+            return 10
+            
+        } else{
+            
+            return 10
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        navigationController?.pushViewController(HCLoginViewController(), animated: true)
+    }
+    
+    // MARK: - event response
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

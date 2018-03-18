@@ -1,0 +1,47 @@
+//
+//  HCHomeViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/7.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCHomeViewController: HCBaseViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        addComfirmButton()
+        
+        navItem.title = "火车票"
+        // Do any additional setup after loading the view.
+    }
+    
+    func goToSelectCityViewController() {
+        
+        self.navigationController?.pushViewController(HCSelectCityViewController(), animated: true)
+    }
+    
+    func addComfirmButton()  {
+        
+        HCConfirmButton.addToView(view: self.view, y: 100, title: "查询", color: UIColor.brown) {[weak self] in
+            print("查询")
+            self?.navigationController?.pushViewController(HCCheckTicketViewController(), animated: true)
+        }
+        
+        HCConfirmButton.addToView(view: self.view, y: 200, title: "地址", color: UIColor.blue) {[weak self] in
+            self?.goToSelectCityViewController()
+        }
+        
+        HCConfirmButton.addToView(view: self.view, y: 300, title: "日期", color: UIColor.brown) {[weak self] in
+            print("日期")
+            let datePickerView = HCDatePickerView.init(frame: CGRect(x: 0, y: kScreenHeight - 150, width: kScreenWidth, height: 150))
+            let window = self?.view.window
+            
+            window?.addSubview(datePickerView)
+        }
+    }
+
+}

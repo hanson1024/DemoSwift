@@ -1,0 +1,39 @@
+//
+//  HCSettingGrabSuccessViewController.swift
+//  hcp_ios
+//
+//  Created by Luuuo on 2018/3/16.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCSettingGrabSuccessViewController: HCBaseViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        settingBaseInformation()
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func settingBaseInformation() {
+        
+        navItem.title = "提交成功"
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

@@ -1,0 +1,97 @@
+//
+//  HCSelectTrainNumViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/16.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCSelectTrainNumViewController: HCBaseViewController {
+    
+    private let HCSelectTrainNumCellIdentifier = "HCSelectTrainNumCell"
+    
+    var selectTrainNumTipView: HCSelectTrainNumTipView?
+    
+
+    // MARK: - lazy loading
+    // MARK: - life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        settingBaseInformation()
+        settingSelectTrainNumTipView()
+        settingTableView()
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - private methods
+    func settingBaseInformation() {
+        
+        navItem.title = "选择车次"
+        
+        navItem.rightBarButtonItem = UIBarButtonItem(customView: HCCustomButton.create(title: "确定", didClickCall: { [weak self] in
+            self?.back()
+        }))
+    }
+    
+    func settingSelectTrainNumTipView() {
+        
+        selectTrainNumTipView = HCSelectTrainNumTipView(frame: CGRect(x: 0, y: kStatusAndNavBarHeight, width: kScreenWidth, height: 40))
+        self.view.addSubview(selectTrainNumTipView!)
+    }
+    
+    func settingTableView() {
+        
+        tableView?.register(UINib.init(nibName: HCSelectTrainNumCellIdentifier, bundle: nil), forCellReuseIdentifier: HCSelectTrainNumCellIdentifier)
+        tableView?.contentInset = UIEdgeInsetsMake((selectTrainNumTipView?.frame.maxY)!, 0, 0, 0)
+        tableView?.contentOffset = CGPoint(x: 0, y: -(selectTrainNumTipView?.frame.maxY)!)
+    }
+    
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 13
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 95
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: HCSelectTrainNumCellIdentifier, for: indexPath) as! HCSelectTrainNumCell
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cell = tableView.cellForRow(at: indexPath) as! HCSelectTrainNumCell
+        
+        cell.selectButton.isSelected = !cell.selectButton.isSelected
+    }
+    
+    // MARK: - event response
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

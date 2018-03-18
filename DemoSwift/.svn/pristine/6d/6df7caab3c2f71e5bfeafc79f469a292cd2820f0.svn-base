@@ -1,0 +1,76 @@
+//
+//  HCSelectCityViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/9.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCSelectCityViewController: HCBaseViewController {
+    
+    let cellIdentifier = "HCSelectCityViewControllerCell"
+    var cityList = [HCSelectCityModel]()
+    
+    var isDeparture = false
+    var selectView: HCTicketSelectView?
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navItem.title = isDeparture ? "出发站" : "到达站"
+        
+        addSelectView()
+        
+        settingBaseInformation()
+        
+        loadSelectCityData()
+        
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func settingBaseInformation() {
+        
+        
+    }
+    
+//    func settingTableView()  {
+//
+//        self.cityTableView = UITableView(frame: self.view.bounds, style: .grouped)
+//        self.view.addSubview(self.cityTableView!)
+//
+//        self.cityTableView?.dataSource = self
+//        self.cityTableView?.delegate = self
+//        self.cityTableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
+//        self.cityTableView?.showsVerticalScrollIndicator = false
+//
+//    }
+    
+    func addSelectView() {
+        
+        selectView = HCTicketSelectView(frame: CGRect(x: 0, y: kStatusAndNavBarHeight, width: kScreenWidth, height: 41))
+        self.view.addSubview(selectView!)
+    }
+    
+    func loadSelectCityData() {
+        
+        HCNetworkManager.shared.request(URLString: "http://192.168.10.243:8180/okhcp/module/Stations/getAllStationsByLetters", parameters: nil) { (respond, isSuccess) in
+            
+            print(respond ?? "")
+            
+//            self.cityList = HCSelectCityService.getDictList(citys: respond as! String)
+//            self.cityTableView?.reloadData()
+        }
+        
+    }
+
+}
+
+

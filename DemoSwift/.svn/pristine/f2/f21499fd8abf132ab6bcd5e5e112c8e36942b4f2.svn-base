@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="HCSettingGrabSuccessCell" id="KGk-i7-Jjw" customClass="HCSettingGrabSuccessCell" customModule="hcp_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="666.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehp-8B-3M4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grab_success" translatesAutoresizingMaskIntoConstraints="NO" id="Whl-sb-1ja">
+                                <rect key="frame" x="72.5" y="53" width="50" height="50"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提交成功" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6W-Kg-Kp9">
+                                <rect key="frame" x="147" y="50" width="97.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在竭尽全力为您抢票中…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4n1-Hc-VHr">
+                                <rect key="frame" x="147" y="84" width="168.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32357621190000002" green="0.58425211909999997" blue="0.90460592510000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w6W-Kg-Kp9" firstAttribute="leading" secondItem="Whl-sb-1ja" secondAttribute="trailing" constant="24.5" id="2BZ-3e-UpB"/>
+                            <constraint firstItem="4n1-Hc-VHr" firstAttribute="leading" secondItem="w6W-Kg-Kp9" secondAttribute="leading" id="DkC-qA-0c4"/>
+                            <constraint firstItem="4n1-Hc-VHr" firstAttribute="top" secondItem="w6W-Kg-Kp9" secondAttribute="bottom" constant="5" id="Owy-WL-llI"/>
+                            <constraint firstAttribute="height" constant="150" id="SBl-oq-KrM"/>
+                            <constraint firstItem="w6W-Kg-Kp9" firstAttribute="top" secondItem="ehp-8B-3M4" secondAttribute="top" constant="50" id="fRF-tg-8wu"/>
+                            <constraint firstItem="Whl-sb-1ja" firstAttribute="centerX" secondItem="ehp-8B-3M4" secondAttribute="centerX" constant="-90" id="jja-Z2-V8O"/>
+                            <constraint firstItem="Whl-sb-1ja" firstAttribute="top" secondItem="ehp-8B-3M4" secondAttribute="top" constant="53" id="lS4-hD-T6e"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="抢票成功后将以短信通知您付款" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-Wu-fZx">
+                        <rect key="frame" x="81" y="237" width="214.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" tag="99" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqo-Z9-THL">
+                        <rect key="frame" x="192.5" y="355" width="167.5" height="44"/>
+                        <color key="backgroundColor" red="0.32357621190000002" green="0.58425211909999997" blue="0.90460592510000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="查看抢票设置">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="didClickRightButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9mM-o1-5ro"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="88" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obw-Uv-QcD">
+                        <rect key="frame" x="15" y="355" width="167.5" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="t3J-WM-VAX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="打开抢票列表">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="didClickLeftButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lob-zx-oUw"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="obw-Uv-QcD" firstAttribute="top" secondItem="4wa-Wu-fZx" secondAttribute="bottom" constant="100" id="1Fn-4M-GCY"/>
+                    <constraint firstItem="obw-Uv-QcD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="69I-xu-HQm"/>
+                    <constraint firstItem="Qqo-Z9-THL" firstAttribute="leading" secondItem="obw-Uv-QcD" secondAttribute="trailing" constant="10" id="L7p-YO-YXi"/>
+                    <constraint firstItem="ehp-8B-3M4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Mjw-hD-KOX"/>
+                    <constraint firstItem="Qqo-Z9-THL" firstAttribute="top" secondItem="obw-Uv-QcD" secondAttribute="top" id="O71-fw-18M"/>
+                    <constraint firstAttribute="trailing" secondItem="ehp-8B-3M4" secondAttribute="trailing" id="Rf7-kz-anB"/>
+                    <constraint firstItem="ehp-8B-3M4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SfH-lL-z9w"/>
+                    <constraint firstItem="Qqo-Z9-THL" firstAttribute="height" secondItem="obw-Uv-QcD" secondAttribute="height" id="V34-GF-v5l"/>
+                    <constraint firstItem="4wa-Wu-fZx" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Xaf-nv-eEB"/>
+                    <constraint firstItem="4wa-Wu-fZx" firstAttribute="top" secondItem="ehp-8B-3M4" secondAttribute="bottom" constant="87" id="ng7-ep-ztI"/>
+                    <constraint firstAttribute="trailing" secondItem="Qqo-Z9-THL" secondAttribute="trailing" constant="15" id="o1E-gy-bfe"/>
+                    <constraint firstItem="Qqo-Z9-THL" firstAttribute="width" secondItem="obw-Uv-QcD" secondAttribute="width" id="oTb-RJ-wXw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="leftButton" destination="obw-Uv-QcD" id="rK6-Aa-7Vf"/>
+                <outlet property="rightButton" destination="Qqo-Z9-THL" id="Wci-Yt-Zut"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="grab_success" width="50" height="50"/>
+    </resources>
+</document>

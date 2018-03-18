@@ -1,0 +1,23 @@
+//
+//  HCLoginWriteView.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/14.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCLoginWriteView: UIView {
+    
+    
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}

@@ -1,0 +1,96 @@
+//
+//  HCHomeViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/7.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCHomeViewController: HCBaseViewController {
+    let HCHomeLocationCellIdentifier = "HCHomeLocationCell"
+    let HCHomeDateCellIdentifier = "HCHomeDateCell"
+    let HCHomeComfirCellIdentifier = "HCHomeComfirCell"
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navItem.title = "火车票"
+        
+        
+        tableView?.register(UINib.init(nibName: "HCHomeLocationCell", bundle: nil), forCellReuseIdentifier: HCHomeLocationCellIdentifier)
+        tableView?.register(UINib.init(nibName: "HCHomeDateCell", bundle: nil), forCellReuseIdentifier: HCHomeDateCellIdentifier)
+        tableView?.register(HCHomeComfirCell.self, forCellReuseIdentifier: HCHomeComfirCellIdentifier)
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - private methods
+    
+    func goToSelectCityViewController() {
+        
+        self.navigationController?.pushViewController(HCSelectCityViewController(), animated: true)
+    }
+    
+    func addComfirmButton()  {
+        
+        HCConfirmButton.addToView(view: self.view, y: 200, title: "地址", color: UIColor.blue) {[weak self] in
+            self?.goToSelectCityViewController()
+        }
+        
+        HCConfirmButton.addToView(view: self.view, y: 300, title: "日期", color: UIColor.brown) {[weak self] in
+            print("日期")
+            let datePickerView = HCDatePickerView.init(frame: CGRect(x: 0, y: kScreenHeight - 150, width: kScreenWidth, height: 150))
+            let window = self?.view.window
+            
+            window?.addSubview(datePickerView)
+        }
+    }
+    
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        var height: CGFloat = 44
+        
+        switch indexPath.row {
+        case 0:
+            height = 44
+        case 1,2:
+            height = 64
+        default: break
+        }
+        
+        return height
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell = UITableViewCell()
+        
+        switch indexPath.row {
+        case 0:
+            cell = tableView.dequeueReusableCell(withIdentifier: HCHomeLocationCellIdentifier, for: indexPath)
+        case 1:
+            cell = tableView.dequeueReusableCell(withIdentifier: HCHomeDateCellIdentifier, for: indexPath)
+        case 2:
+            cell = tableView.dequeueReusableCell(withIdentifier: HCHomeComfirCellIdentifier, for: indexPath)
+        default: break
+        }
+        
+        return cell
+    }
+    
+    // MARK: - event response
+    
+    
+
+}

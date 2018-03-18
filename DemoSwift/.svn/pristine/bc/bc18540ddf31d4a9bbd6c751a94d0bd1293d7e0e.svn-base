@@ -1,0 +1,211 @@
+//
+//  HCDateViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/13.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCDateViewController: HCBaseViewController {
+    
+    private var selectDateTipView: HCDateSelectTipView?
+    
+    private var dateList = [HCDateModel]()
+    
+    private var selectDateList = [HCDateModel]()
+    
+    var selectDateModel = HCDateModel()
+    
+    
+    var mutiple = true
+    
+    
+    internal var date = Date(){
+        didSet{
+            self.tableView?.reloadData()
+        }
+    }
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        tableView?.register(HCDateViewControllerCell.self, forCellReuseIdentifier: HCDateViewControllerCellIdentifier)
+        tableView?.contentInset = UIEdgeInsetsMake(44 + kStatusAndNavBarHeight, 0, 0, 0)
+        
+        settingSelectDateTipView()
+        settingNavigationBar()
+        loadData()
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - private methods
+    
+    override func loadData() {
+        
+        DispatchQueue.global().async {
+            self.dateList = HCDateModelService().getDateList(maxDateCount: 60, saleDateCount: 30);
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
+        }
+    }
+    
+    func settingNavigationBar() {
+        
+        navItem.title = "日期选择"
+      
+        navItem.rightBarButtonItem = UIBarButtonItem(customView: HCCustomButton.create(title: "确定", didClickCall: {[weak self] in
+            self?.back()
+        }))
+    }
+    
+    func settingSelectDateTipView() {
+        
+        selectDateTipView = HCDateSelectTipView(frame: CGRect(x: 0, y: kStatusAndNavBarHeight, width: kScreenWidth, height: 44))
+       
+        view.addSubview(selectDateTipView!)
+    }
+    
+    private func refreshDidSelectModel(list: [HCDateModel],model: HCDateModel) {
+        
+        for (_,element) in list.enumerated() {
+            let count = abs(element.indexPath.row - model.indexPath.row)
+            if count > 2 {
+                
+                element.selectStatus = false
+                
+                self.tableView?.reloadRow(at: element.indexPath, with: .none)
+                
+                if let index = selectDateList.index(of: element) {
+                    selectDateList.remove(at: index)
+                }
+                
+            }
+        }
+        
+        model.selectStatus = true
+    }
+    
+    func refreshSelectTipView(list: [HCDateModel]) {
+        
+        var string = String()
+        
+        for (index,element) in list.enumerated() {
+            
+            string.append((index == 0 ? "":",")+element.dateString!)
+        }
+        
+        selectDateTipView?.dateString = "已选择日期: " + string
+    }
+    
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dateList.count;
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: HCDateViewControllerCellIdentifier, for: indexPath) as! HCDateViewControllerCell
+        let model = dateList[indexPath.row]
+        
+        cell.dateModel = model
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if mutiple {
+            
+            let model = dateList[indexPath.row]
+            
+            if selectDateList.contains(model){
+                
+                model.selectStatus = false
+                
+                if let index = selectDateList.index(of: model) {
+                    selectDateList.remove(at: index)
+                }
+                
+                refreshSelectTipView(list: selectDateList)
+                
+            }else{
+                
+                if selectDateList.count == 3 {
+                    
+                    UIAlertController.showAlert(title: "最多选择3天", message: "").otherHandle(alertAction: { (action) in
+                        
+                    }).show(superViewController: self)
+                    
+                    return
+                }
+                
+                model.selectStatus = true
+                model.indexPath = indexPath
+                
+                refreshDidSelectModel(list: selectDateList, model: model)
+                
+                selectDateList.append(model)
+                
+                refreshSelectTipView(list: selectDateList)
+            }
+            
+        }else{
+            
+            let model = dateList[indexPath.row]
+            
+            if selectDateModel == model {
+                
+                model.selectStatus = !selectDateModel.selectStatus
+                selectDateModel = model
+                
+                selectDateTipView?.dateString = "已选择日期: " + (model.selectStatus ? model.dateString! : "" )
+                
+            }else{
+                
+                model.selectStatus = true
+                selectDateModel.selectStatus = false
+                
+                tableView.reloadRow(at: selectDateModel.indexPath, with: .none)
+                
+                selectDateModel = model
+                selectDateModel.indexPath = indexPath
+                
+                selectDateTipView?.dateString = "已选择日期: " + selectDateModel.dateString!
+            }
+            
+            
+        }
+        
+        tableView.reloadRow(at: indexPath, with: .none)
+        
+    }
+    
+    // MARK: - event response
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

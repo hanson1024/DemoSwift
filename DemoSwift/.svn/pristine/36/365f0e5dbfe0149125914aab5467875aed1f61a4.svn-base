@@ -1,0 +1,33 @@
+//
+//  HCHomeViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/7.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCHomeViewController: HCBaseViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let url: String = "/otsmobile/app/mgs/mgw.htm?operationType=com.cars.otsmobile.queryLeftTicketZ&requestData=%5B%7B%22train_date%22%3A%2220180308%22%2C%22purpose_codes%22%3A%2200%22%2C%22from_station%22%3A%22BJP%22%2C%22to_station%22%3A%22SHH%22%2C%22station_train_code%22%3A%22%22%2C%22start_time_begin%22%3A%220000%22%2C%22start_time_end%22%3A%222400%22%2C%22train_headers%22%3A%22QB%23%22%2C%22train_flag%22%3A%22%22%2C%22seat_type%22%3A%220%22%2C%22seatBack_Type%22%3A%22%22%2C%22ticket_num%22%3A%22%22%2C%22dfpStr%22%3A%22UyxK6ubnuutqab4hbupF2OMGULvm4bTI3sT1lx2keug4lNXAXqDq3LSO91Hfc8GE_lCDW3Ub5cHKKRk0Hk5hnOVeXeE2QopnzF0O9t5rI3Ad3z8yLiS-eNsK95J6S-kjvmpIR-228gAXGuBXdg7uhqjSIHpWadY8%22%2C%22baseDTO%22%3A%7B%22time_str%22%3A%2220180307163951%22%2C%22os_type%22%3A%22i%22%2C%22mobile_no%22%3A%22%22%2C%22device_no%22%3A%22E7CD78EAC6A24FD3880F77FF7123B113%22%2C%22user_name%22%3A%22%22%2C%22check_code%22%3A%22f698f9f61978aca52ca5f5701ecfc60b%22%2C%22version_no%22%3A%223.0.3%22%7D%7D%5D&ts=M7%2FdTt1&sign=56272e8363fefb179b2cb371656b9579"
+        
+        
+        HCHTTPRequest.share.request(urlString: url, success: { (respond : String) in
+            
+            print("respond = \(respond)")
+            
+        }) { (error : NSError) in
+            print("error = \(error)")
+        }
+    }
+
+}

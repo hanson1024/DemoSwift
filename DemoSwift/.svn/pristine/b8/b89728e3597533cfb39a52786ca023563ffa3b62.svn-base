@@ -1,0 +1,25 @@
+//
+//  UIBarButtonItem+Extension.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/12.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+extension UIBarButtonItem {
+    
+    convenience init(title: String,fontSize :CGFloat = 16,target: AnyObject,action: Selector,isBack: Bool = false) {
+        //Swift 调用 OC 返回 instancetype 的方法 判断不出是否可选
+        let btn: UIButton = UIButton(title: title, fontSize: fontSize, normalColor: UIColor.darkGray, highlightedColor: UIColor.blue)
+        let imageName = "navigation_back"
+        if isBack {
+            btn.setImage(UIImage(named:imageName), for: .normal)
+            btn.sizeToFit()
+        }
+        btn.addTarget(target, action: action, for: .touchUpInside)
+        
+        self.init(customView: btn)
+    }
+}

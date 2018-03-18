@@ -1,0 +1,161 @@
+//
+//  HCSettingGrabViewController.swift
+//  hcp_ios
+//
+//  Created by Luuuo on 2018/3/16.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCSettingGrabViewController: HCBaseViewController {
+    
+    private let HCSettingGrabStationCellCellIdentifier = "HCSettingGrabStationCell"
+    private let HCSettingGrabDateCellIdentifier = "HCSettingGrabDateCell"
+    private let HCSettingGrabAddCellIdentifier = "HCSettingGrabAddCell"
+    private let HCSettingGrabPhoneCellIdentifier = "HCSettingGrabPhoneCell"
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        settingBaseInformation()
+        settingTableView()
+        // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - private methods
+    func settingBaseInformation() {
+        
+        navItem.title = "抢票设置"
+        
+        HCConfirmButton.addToView(view: self.view, y: 10, title: "下一步", color: kUIColorCustomBlue(), isBottom: true) {[weak self] in
+            self?.navigationController?.pushViewController(HCSettingGrabSuccessViewController(), animated: true)
+        }
+    }
+    
+    func settingTableView() {
+        
+        tableView?.register(UINib.init(nibName: HCSettingGrabStationCellCellIdentifier, bundle: nil), forCellReuseIdentifier: HCSettingGrabStationCellCellIdentifier)
+        tableView?.register(UINib.init(nibName: HCSettingGrabDateCellIdentifier, bundle: nil), forCellReuseIdentifier: HCSettingGrabDateCellIdentifier)
+        tableView?.register(UINib.init(nibName: HCSettingGrabAddCellIdentifier, bundle: nil), forCellReuseIdentifier: HCSettingGrabAddCellIdentifier)
+        tableView?.register(UINib.init(nibName: HCSettingGrabPhoneCellIdentifier, bundle: nil), forCellReuseIdentifier: HCSettingGrabPhoneCellIdentifier)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 5
+        }else{
+            return 2
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                
+                return 75
+            }else{
+                if indexPath.row == 4 {
+                    return 64
+                }else{
+                    return 44
+                }
+            }
+        } else {
+            return 44
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0{
+            if indexPath.row == 0 {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: HCSettingGrabStationCellCellIdentifier, for: indexPath)
+                return cell
+                
+            }else{
+                if indexPath.row == 4 {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: HCSettingGrabAddCellIdentifier, for: indexPath)
+                    return cell
+                }else{
+                    let cell = tableView.dequeueReusableCell(withIdentifier: HCSettingGrabDateCellIdentifier, for: indexPath) as! HCSettingGrabDateCell
+                    
+                    if indexPath.row == 1 {
+                        cell.titleNameLabel.text = "出发日期"
+                        cell.contentLabel.text = "03月10日，03月11日"
+                        
+                        cell.didClickAddMoreCallBack = {[weak self] in
+                            
+                            print("出发日期:")
+                        self?.navigationController?.pushViewController(HCDateViewController(), animated: true)
+                        }
+                        
+                    }else if indexPath.row == 2 {
+                        cell.titleNameLabel.text = "指定车次"
+                        cell.contentLabel.text = "G102"
+                        
+                        cell.didClickAddMoreCallBack = {
+                            
+                            print("指定车次:")
+                        }
+                    }else{
+                        cell.titleNameLabel.text = "坐席类型"
+                        cell.contentLabel.text = "推荐多选"
+                        
+                        cell.didClickAddMoreCallBack = {
+                            
+                            print("坐席类型:")
+                        }
+                    }
+                    
+                    return cell
+                }
+            }
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HCSettingGrabPhoneCellIdentifier, for: indexPath) as! HCSettingGrabPhoneCell
+            if indexPath.row == 0 {
+                cell.phoneLabel.text = "15625044504"
+            }else{
+                cell.phoneLabel.text = "15625045264"
+            }
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    
+    // MARK: - event response
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

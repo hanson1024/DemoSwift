@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="KGk-i7-Jjw" customClass="HCHomeLocationCell" customModule="hcp_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syZ-bB-fpF">
+                        <rect key="frame" x="15" y="15" width="115" height="38.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="乌鲁木齐">
+                            <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="didClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wHw-8A-ppg"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="77" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1K4-ub-kNT">
+                        <rect key="frame" x="190" y="15" width="115" height="38.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="长沙">
+                            <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="didClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KXi-cm-f1k"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q4U-Hn-Xyr">
+                        <rect key="frame" x="190" y="63" width="115" height="0.5"/>
+                        <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="axb-RK-FsT"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A3m-10-xUc">
+                        <rect key="frame" x="15" y="62.5" width="115" height="0.5"/>
+                        <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="exX-8p-gNS"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" tag="88" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-V9-qRc">
+                        <rect key="frame" x="140" y="12" width="40" height="40"/>
+                        <state key="normal" image="change_home"/>
+                        <connections>
+                            <action selector="didClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8Ja-of-qxr"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="syZ-bB-fpF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="5rg-ff-PGg"/>
+                    <constraint firstAttribute="bottom" secondItem="A3m-10-xUc" secondAttribute="bottom" id="ExL-SR-XeS"/>
+                    <constraint firstAttribute="bottom" secondItem="q4U-Hn-Xyr" secondAttribute="bottom" id="TZe-3E-dpL"/>
+                    <constraint firstItem="q4U-Hn-Xyr" firstAttribute="trailing" secondItem="1K4-ub-kNT" secondAttribute="trailing" id="XJx-bU-PUf"/>
+                    <constraint firstItem="A3m-10-xUc" firstAttribute="trailing" secondItem="syZ-bB-fpF" secondAttribute="trailing" id="avF-TU-0kS"/>
+                    <constraint firstItem="q4U-Hn-Xyr" firstAttribute="leading" secondItem="1K4-ub-kNT" secondAttribute="leading" id="bxI-Wq-tSB"/>
+                    <constraint firstItem="rfd-V9-qRc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cB1-G6-0tr"/>
+                    <constraint firstItem="A3m-10-xUc" firstAttribute="leading" secondItem="syZ-bB-fpF" secondAttribute="leading" id="eQa-R5-d4z"/>
+                    <constraint firstAttribute="bottom" secondItem="syZ-bB-fpF" secondAttribute="bottom" constant="10" id="fb1-g1-TaB"/>
+                    <constraint firstItem="1K4-ub-kNT" firstAttribute="leading" secondItem="rfd-V9-qRc" secondAttribute="trailing" constant="10" id="g30-iA-dUY"/>
+                    <constraint firstAttribute="bottom" secondItem="1K4-ub-kNT" secondAttribute="bottom" constant="10" id="l1B-0N-CJ6"/>
+                    <constraint firstItem="rfd-V9-qRc" firstAttribute="leading" secondItem="syZ-bB-fpF" secondAttribute="trailing" constant="10" id="ldl-L0-ofT"/>
+                    <constraint firstItem="rfd-V9-qRc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="liP-1l-0nW"/>
+                    <constraint firstItem="1K4-ub-kNT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ltD-sY-61J"/>
+                    <constraint firstAttribute="trailing" secondItem="1K4-ub-kNT" secondAttribute="trailing" constant="15" id="re0-AJ-fme"/>
+                    <constraint firstItem="syZ-bB-fpF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="wef-of-bHb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="departtureButton" destination="syZ-bB-fpF" id="dFm-H6-8Bg"/>
+                <outlet property="destinationButton" destination="1K4-ub-kNT" id="77i-sA-npb"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="change_home" width="40" height="40"/>
+    </resources>
+</document>

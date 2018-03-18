@@ -1,0 +1,97 @@
+//
+//  HttpRequest.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/7.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+
+//public enum HTTPMethod: String {
+//    case options = "OPTIONS"
+//    case get     = "GET"
+//    case head    = "HEAD"
+//    case post    = "POST"
+//    case put     = "PUT"
+//    case patch   = "PATCH"
+//    case delete  = "DELETE"
+//    case trace   = "TRACE"
+//    case connect = "CONNECT"
+//}
+
+class HCHTTPRequest: NSObject {
+    
+    var httpHeader : HTTPHeaders? = nil
+    var baseURL : String? = nil
+    
+    typealias NetWorkSuccess = (_ response : String) -> ()
+    typealias NetWorkFailure = (_ error : NSError) -> ()
+    static let share = HCHTTPRequest()
+}
+
+extension HCHTTPRequest {
+    
+    func request(urlString : String, success : @escaping NetWorkSuccess, failure : @escaping NetWorkFailure) {
+        
+        GET(urlString: urlString, parameters: nil, success: success, failure: failure)
+    }
+    
+    func GET(urlString : String, parameters: [String:AnyObject]? = nil, success : @escaping NetWorkSuccess, failure : @escaping NetWorkFailure)  {
+        
+        REQUEST(method: .get, urlString: urlString, parameters: parameters, success: success, failure: failure)
+    }
+    
+    func POST(urlString : String, parameters: [String:AnyObject]?, success : @escaping NetWorkSuccess, failure : @escaping NetWorkFailure)  {
+        
+        REQUEST(method: .post, urlString: urlString, parameters: parameters, success: success, failure: failure)
+    }
+    
+    func REQUEST(method: HTTPMethod, urlString : String, parameters: [String:AnyObject]?, success : @escaping NetWorkSuccess, failure : @escaping NetWorkFailure) {
+        
+        var url  = urlString.mutableCopy() as! String
+        
+        if urlString.contains("http") == false {
+
+            if self.baseURL != nil {
+
+                url = self.baseURL! + urlString
+                
+            } else {
+                
+                url = "https://mobile.12306.cn" + urlString
+            }
+        }
+        
+        Alamofire.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: self.httpHeader).responseString { (response) in
+            switch response.result {
+                
+                case .success(_):
+                    success(response.result.value ?? "")
+                    break
+    
+                case .failure(let error):
+                    failure(error as NSError)
+                    break
+    
+                
+            }
+        }
+        
+    }
+    
+}
+
+extension HCHTTPRequest {
+    
+    func configBaseURL(baseURL : String) {
+        
+        self.baseURL = baseURL
+    }
+    
+    func configHttpHeader(header : HTTPHeaders) {
+        
+        self.httpHeader = header
+    }
+}

@@ -1,0 +1,76 @@
+//
+//  HCResultStatus.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/8.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import Foundation
+import SwiftyJSON
+
+class TicketResult :NSObject {
+    
+    var yp_info: String?
+    var station_train_code: String?
+    var arrive_time: String?
+    var is_support_card: String?
+    var yp_info_cover: String?
+    var controlled_train_message: String?
+    var yp_ex: String?
+    var flag: String?
+    var train_no: String?
+    var location_code: String?
+    var from_station_name: String?
+    var exchange_train_flag: String?
+    var yp_info_coverFlag: String?
+    var start_train_date: String?
+    var day_difference: String?
+    var controlled_train_flag: String?
+    var from_station_telecode: String?
+    var message: String?
+    var lishi: String?
+    var start_station_telecode: String?
+    var start_time: String?
+    var to_station_telecode: String?
+    var end_station_telecode: String?
+    var to_station_name: String?
+    var price: String?
+    
+    
+    /**
+     * Instantiate the instance using the passed json values to set the properties values
+     */
+    init(fromJson json: JSON!){
+        if json == nil{
+            return
+        }
+        arrive_time = json["arrive_time"].stringValue
+        controlled_train_flag = json["controlled_train_flag"].stringValue
+        controlled_train_message = json["controlled_train_message"].stringValue
+        day_difference = json["day_difference"].stringValue
+        end_station_telecode = json["end_station_telecode"].stringValue
+        exchange_train_flag = json["exchange_train_flag"].stringValue
+        flag = json["flag"].stringValue
+        from_station_name = json["from_station_name"].stringValue
+        from_station_telecode = json["from_station_telecode"].stringValue
+        is_support_card = json["is_support_card"].stringValue
+        lishi = json["lishi"].stringValue
+        location_code = json["location_code"].stringValue
+        message = json["message"].stringValue
+        start_station_telecode = json["start_station_telecode"].stringValue
+        start_time = json["start_time"].stringValue
+        start_train_date = json["start_train_date"].stringValue
+        station_train_code = json["station_train_code"].stringValue
+        to_station_name = json["to_station_name"].stringValue
+        to_station_telecode = json["to_station_telecode"].stringValue
+        train_no = json["train_no"].stringValue
+        yp_ex = json["yp_ex"].stringValue
+        yp_info = json["yp_info"].stringValue
+        yp_info_cover = json["yp_info_cover"].stringValue
+        yp_info_coverFlag = json["yp_info_coverFlag"].stringValue
+        price = "\(arc4random_uniform(100) + 50)"
+    }
+
+    
+}

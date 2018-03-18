@@ -1,0 +1,32 @@
+//
+//  HCTicketDetailHeaderCell.swift
+//  hcp_ios
+//
+//  Created by Luuuo on 2018/3/15.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCTicketDetailHeaderCell: UITableViewCell {
+    
+    @IBOutlet weak var starTimeLabel: UILabel!
+    @IBOutlet weak var arriveTimeLabel: UILabel!
+    @IBOutlet weak var consTimeLabel: UILabel!
+    @IBOutlet weak var starStationLabel: UILabel!
+    @IBOutlet weak var arrivaStationLabel: UILabel!
+    @IBOutlet weak var trainlNumberLabel: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

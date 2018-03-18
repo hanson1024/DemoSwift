@@ -1,0 +1,45 @@
+//
+//  HCTicketDetailDaysCell.swift
+//  hcp_ios
+//
+//  Created by Luuuo on 2018/3/15.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCTicketDetailDaysCell: UITableViewCell {
+    
+    var didClickDaysCallBack: (() -> Void)?
+    
+    @IBOutlet weak var lastDayButton: UIButton!
+    @IBOutlet weak var nextDayButton: UIButton!
+    @IBOutlet weak var daysButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = .none
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    @IBAction func didClickLastButton(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func didClickNextButton(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func didClickDaysButton(_ sender: UIButton) {
+        
+        didClickDaysCallBack != nil ? didClickDaysCallBack!() : ()
+    }
+    
+
+}

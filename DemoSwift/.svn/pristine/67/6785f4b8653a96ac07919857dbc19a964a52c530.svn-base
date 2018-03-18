@@ -1,0 +1,145 @@
+//
+//  HCCheckTicketViewController.swift
+//  hcp_ios
+//
+//  Created by Hanson on 2018/3/8.
+//  Copyright © 2018年 Hanson. All rights reserved.
+//
+
+import UIKit
+
+class HCCheckTicketViewController: HCBaseViewController {
+    
+    
+    
+    
+    
+    // MARK: - lazy loading
+    // MARK: - life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        configParameters()
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: - private methods
+    
+    
+    
+    func configParameters() {
+        
+        let operationType = "com.cars.otsmobile.queryLeftTicketZ"
+        let ts = "M88M%2FJ6"
+        let sign = "bec639909771769fbf900bdc2fd078d3"
+        
+        var requestDataArray = [[String:AnyObject]]()
+        
+        let train_date = "20180310"
+        let purpose_codes = "00"
+        let from_station = "BJP"
+        let to_station = "SHH"
+        let station_train_code = ""
+        let start_time_begin = "0000"
+        let start_time_end = "2400"
+        let train_headers = "QB#"
+        let train_flag = ""
+        let seat_type = "0"
+        let seatBack_Type = ""
+        let ticket_num = ""
+        let dfpStr = "UyxK6ubnuutqab4hbupF2OMGULvm4bTI3sT1lx2keug4lNXAXqDq3LSO91Hfc8GE_lCDW3Ub5cHKKRk0Hk5hnOVeXeE2QopnzF0O9t5rI3Ad3z8yLiS-eNsK95J6S-kjvmpIR-228gAXGuBXdg7uhqjSIHpWadY8"
+        
+        let time_str = "20180309092426"
+        let os_type = "i"
+        let mobile_no = ""
+        let device_no = "E7CD78EAC6A24FD3880F77FF7123B113"
+        let user_name = ""
+        let check_code = "7ba12ff087b8837514daa13e05ecc128"
+        let version_no = "3.0.3"
+        
+        var dict = [String:AnyObject]()
+        var baseDTODict = [String:String]()
+        
+        dict["train_date"] = train_date as AnyObject
+        dict["purpose_codes"] = purpose_codes as AnyObject
+        dict["from_station"] = from_station as AnyObject
+        dict["to_station"] = to_station as AnyObject
+        dict["station_train_code"] = station_train_code as AnyObject
+        dict["start_time_begin"] = start_time_begin as AnyObject
+        dict["start_time_end"] = start_time_end as AnyObject
+        dict["train_headers"] = train_headers as AnyObject
+        dict["train_flag"] = train_flag as AnyObject
+        dict["seat_type"] = seat_type as AnyObject
+        dict["seatBack_Type"] = seatBack_Type as AnyObject
+        dict["ticket_num"] = ticket_num as AnyObject
+        dict["dfpStr"] = dfpStr as AnyObject
+        
+        baseDTODict["time_str"] = time_str
+        baseDTODict["os_type"] = os_type
+        baseDTODict["mobile_no"] = mobile_no
+        baseDTODict["device_no"] = device_no
+        baseDTODict["user_name"] = user_name
+        baseDTODict["check_code"] = check_code
+        baseDTODict["version_no"] = version_no
+        
+        dict["baseDTO"] = baseDTODict as AnyObject
+        requestDataArray.append(dict as [String : AnyObject])
+        
+        let data = try! JSONSerialization.data(withJSONObject: requestDataArray, options: .prettyPrinted)
+        let requestDataUtf8 = String.init(data: data, encoding: .utf8) ?? ""
+        
+        let charSet = CharacterSet.urlQueryAllowed as! NSMutableCharacterSet
+        
+        let requestData:String = requestDataUtf8.addingPercentEncoding(withAllowedCharacters: charSet as CharacterSet) ?? ""
+        
+        let requestString = NSMutableString.init(string: requestData)
+        var range = NSRange.init(location: 0, length: requestString.length)
+        requestString.replaceOccurrences(of: "%0A", with: "", options: .literal, range: range)
+        range = NSRange.init(location: 0, length: requestString.length)
+        requestString.replaceOccurrences(of: "%20", with: "", options: .literal, range: range)
+        range = NSRange.init(location: 0, length: requestString.length)
+        requestString.replaceOccurrences(of: ":", with: "%3A", options: .literal, range: range)
+        range = NSRange.init(location: 0, length: requestString.length)
+        requestString.replaceOccurrences(of: ",", with: "%2C", options: .literal, range: range)
+        
+        loadCheckTicketData(operationType: operationType, ts: ts, sign: sign, requestData: requestString as String)
+    }
+    
+    func loadCheckTicketData(operationType: String, ts: String, sign: String,requestData: String) {
+        
+        let operationType = "operationType=" + operationType
+        let ts = ts.configParametersFormater(name: "ts")
+        let sign = sign.configParametersFormater(name: "sign")
+        let requestData = requestData.configParametersFormater(name: "requestData")
+        
+        let url = "https://mobile.12306.cn/otsmobile/app/mgs/mgw.htm?" + operationType + requestData + ts + sign
+        
+        HCNetworkManager.shared.request(URLString: url, parameters: nil) { (respond, isSuccess) in
+            print(respond ?? "")
+        }
+        
+    }
+    
+    
+    // MARK: - Delegate
+    // MARK: - tableViewDelegate
+    // MARK: - event response
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
