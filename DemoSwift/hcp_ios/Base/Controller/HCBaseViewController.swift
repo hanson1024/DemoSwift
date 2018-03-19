@@ -22,8 +22,14 @@ class HCBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //取消自动缩进 - 如果隐藏了导航栏 会缩进20点
-        automaticallyAdjustsScrollViewInsets = false
+        
+        if #available(iOS 11.0, *) {
+            UIScrollView.appearance().contentInsetAdjustmentBehavior = .never
+        }else{
+            automaticallyAdjustsScrollViewInsets = false;
+        }
+        
+        tableView?.scrollIndicatorInsets = (tableView?.contentInset)!
         
         settingBaseInformation()
     }
