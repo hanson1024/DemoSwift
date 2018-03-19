@@ -29,8 +29,6 @@ class HCBaseViewController: UIViewController {
             automaticallyAdjustsScrollViewInsets = false;
         }
         
-        tableView?.scrollIndicatorInsets = (tableView?.contentInset)!
-        
         settingBaseInformation()
     }
     
